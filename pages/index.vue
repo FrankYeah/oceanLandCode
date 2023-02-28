@@ -11,7 +11,7 @@
 <style lang="scss" scoped>
 
 .index {
-
+  min-height: 100vh;
 }
 
 @media( max-width: 1023px ){

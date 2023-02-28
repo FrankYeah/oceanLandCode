@@ -64,7 +64,7 @@
   transform: translate(-50%, 0%);
   max-width: 1200px;
   padding: 0px 15px;
-  width: calc(100vw - 0px);
+  width: 100vw;
   height: 60px;
   display: flex;
   justify-content: space-between;
