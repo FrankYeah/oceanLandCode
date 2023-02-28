@@ -3,6 +3,7 @@
     <HeaderStatic />
     <NuxtPage />
     <FooterStatic />
+    <toTop />
     <slot />
   </div>
 </template>

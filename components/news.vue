@@ -1,25 +1,27 @@
 <template>
-  <div class="index"></div>
+  <div class="footer">
+  </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
+
 
 
 </script>
 
 <style lang="scss" scoped>
 
-.index {
-  min-height: 100vh;
+.footer {
+  
 }
 
 @media( max-width: 1023px ){
 
-.index {
-
-
+.footer {
+  
 
 }
+
 }
 
 </style>
