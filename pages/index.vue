@@ -44,8 +44,8 @@
         <headName :en="'( Featured Store )'" :text="'精選店家'" />
         <div class="index-store-text">山群環抱俯瞰基隆，蘊藏著一間間店家，值得我們深入挖掘。</div>
         <div class="index-store-en">Keelung Flavor</div>
-        <btnType :text="'三分鐘基隆旅遊懶人包'" />
-        <btnType :text="'全部店家'" class="index-store-all" />
+        <btnType :text="'三分鐘基隆旅遊懶人包'" :type="'transparent'" />
+        <btnType :text="'全部店家'" :type="'blue'" class="index-store-all" />
       </div>
       <div class="index-store-right">
         <store class="index-store-card" />
@@ -62,7 +62,7 @@
         <div class="index-tour-row">
           <img class="index-tour-arrow" src="@/assets/img/regular/arrow-slides_n.png" alt="logo">
           <img class="index-tour-arrow index-tour-arrow-last" src="@/assets/img/regular/arrow-slides_n.png" alt="logo">
-          <btnType />
+          <btnType :text="'全部遊程'" :type="'blue'" />
         </div>
       </div>
       <div class="index-tour-box">
