@@ -1,50 +1,52 @@
 <template>
   <div class="header">
-    <div class="header-box">
-      <nuxt-link to="/">
-        <div class="header-logo">與海有關</div>
-      </nuxt-link>
-      <img class="header-location" src="@/assets/img/other/location.png" alt="logo">
-      <div class="header-keelung">基隆</div>
-      <img class="header-weather" src="@/assets/img/other/weather.png" alt="logo">
-      <div class="header-line"></div>
-      <div class="header-temp">14°C</div>
-    </div>
-    <div class="header-box">
-      <nuxt-link to="/" class="header-href">
-        <div class="header-text">店家</div>
-      </nuxt-link>
-      <nuxt-link to="/" class="header-href">
-        <div class="header-text">遊程</div>
-      </nuxt-link>
-      <nuxt-link to="/" class="header-href">
-        <div class="header-text">關於</div>
-      </nuxt-link>
-      <nuxt-link to="/" class="header-href">
-        <div class="header-text">聯繫/合作</div>
-      </nuxt-link>
-      <nuxt-link to="/" class="header-href">
-        <div class="header-text">三分鐘基隆旅遊懶人包</div>
-      </nuxt-link>
-    </div>
-    <div class="header-box">
-      <a class="header-href" href="https://www.instagram.com/sidd.blue/" target="_blank">
-        <img class="header-icon default-image" src="@/assets/img/navigation/ig_n.png" alt="logo">
-        <img class="header-icon hover-image" src="@/assets/img/navigation/ig_h.png" alt="logo">
-      </a>
-      <a class="header-href" href="https://www.instagram.com/sidd.blue/" target="_blank">
-        <img class="header-icon default-image" src="@/assets/img/navigation/fb_n.png" alt="logo">
-        <img class="header-icon hover-image" src="@/assets/img/navigation/fb_h.png" alt="logo">
-      </a>
-      <div class="header-line"></div>
-      <nuxt-link to="/" class="header-href">
-        <img class="header-icon default-image" src="@/assets/img/navigation/like_n.png" alt="logo">
-        <img class="header-icon hover-image" src="@/assets/img/navigation/like_h.png" alt="logo">
-      </nuxt-link>
-      <nuxt-link to="/" class="header-href">
-        <img class="header-icon default-image" src="@/assets/img/navigation/search_n.png" alt="logo">
-        <img class="header-icon hover-image" src="@/assets/img/navigation/search_h.png" alt="logo">
-      </nuxt-link>
+    <div class="header-outer">
+      <div class="header-box">
+        <nuxt-link to="/">
+          <div class="header-logo">與海有關</div>
+        </nuxt-link>
+        <img class="header-location" src="@/assets/img/other/location.png" alt="logo">
+        <div class="header-keelung">基隆</div>
+        <img class="header-weather" src="@/assets/img/other/weather.png" alt="logo">
+        <div class="header-line"></div>
+        <div class="header-temp">14°C</div>
+      </div>
+      <div class="header-box">
+        <nuxt-link to="/" class="header-href">
+          <div class="header-text">店家</div>
+        </nuxt-link>
+        <nuxt-link to="/" class="header-href">
+          <div class="header-text">遊程</div>
+        </nuxt-link>
+        <nuxt-link to="/" class="header-href">
+          <div class="header-text">關於</div>
+        </nuxt-link>
+        <nuxt-link to="/" class="header-href">
+          <div class="header-text">聯繫/合作</div>
+        </nuxt-link>
+        <nuxt-link to="/" class="header-href">
+          <div class="header-text">三分鐘基隆旅遊懶人包</div>
+        </nuxt-link>
+      </div>
+      <div class="header-box">
+        <a class="header-href" href="https://www.instagram.com/sidd.blue/" target="_blank">
+          <img class="header-icon default-image" src="@/assets/img/navigation/ig_n.png" alt="logo">
+          <img class="header-icon hover-image" src="@/assets/img/navigation/ig_h.png" alt="logo">
+        </a>
+        <a class="header-href" href="https://www.instagram.com/sidd.blue/" target="_blank">
+          <img class="header-icon default-image" src="@/assets/img/navigation/fb_n.png" alt="logo">
+          <img class="header-icon hover-image" src="@/assets/img/navigation/fb_h.png" alt="logo">
+        </a>
+        <div class="header-line"></div>
+        <nuxt-link to="/" class="header-href">
+          <img class="header-icon default-image" src="@/assets/img/navigation/like_n.png" alt="logo">
+          <img class="header-icon hover-image" src="@/assets/img/navigation/like_h.png" alt="logo">
+        </nuxt-link>
+        <nuxt-link to="/" class="header-href">
+          <img class="header-icon default-image" src="@/assets/img/navigation/search_n.png" alt="logo">
+          <img class="header-icon hover-image" src="@/assets/img/navigation/search_h.png" alt="logo">
+        </nuxt-link>
+      </div>
     </div>
   </div>
 </template>
@@ -59,16 +61,18 @@
 
 .header {
   position: fixed;
-  top: 0px;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  max-width: 1200px;
-  padding: 0px 15px;
   width: 100vw;
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: white;
+
+  &-outer {
+    max-width: 1200px;
+    height: 60px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+  }
 
   &-box {
     display: flex;

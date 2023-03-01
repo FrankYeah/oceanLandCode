@@ -70,7 +70,7 @@
 .footer {
   padding: 60px 0px;
   color: white;
-  background-image: linear-gradient(to bottom, #48b4d8, rgba(141, 179, 200, 0.4) 200%);
+   background-image: linear-gradient(to bottom, #8db3c8, #64b4d2);
 
   &-outer {
     max-width: 1200px;
