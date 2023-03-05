@@ -12,19 +12,19 @@
         <div class="header-temp">14°C</div>
       </div>
       <div class="header-box">
-        <nuxt-link to="/" class="header-href">
+        <nuxt-link to="/store-list" class="header-href">
           <div class="header-text">店家</div>
         </nuxt-link>
-        <nuxt-link to="/" class="header-href">
+        <nuxt-link to="/tour-list" class="header-href">
           <div class="header-text">遊程</div>
         </nuxt-link>
-        <nuxt-link to="/" class="header-href">
+        <nuxt-link to="/about" class="header-href">
           <div class="header-text">關於</div>
         </nuxt-link>
-        <nuxt-link to="/" class="header-href">
+        <nuxt-link to="/contact" class="header-href">
           <div class="header-text">聯繫/合作</div>
         </nuxt-link>
-        <nuxt-link to="/" class="header-href">
+        <nuxt-link to="/lazy" class="header-href">
           <div class="header-text">三分鐘基隆旅遊懶人包</div>
         </nuxt-link>
       </div>

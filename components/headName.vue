@@ -15,17 +15,24 @@ const props = defineProps(['text', 'en'])
 <style lang="scss" scoped>
 
 .head-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &-en {
-
+    font-weight: bold;
+    font-size: 14px;
+    color: #7ca1b5;
   }
 
   &-title {
-    
+    font-weight: bold;
+    margin-top: 6px;
+    font-size: 36px;
   }
 
   &-wave {
-    
+    margin-top: 6px;
   }
 
 }
