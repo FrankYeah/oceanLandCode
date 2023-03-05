@@ -26,6 +26,13 @@
         :type="'round'"
       />
     </div>
+
+    <div class="store-list-filter">
+      <div class="store-list-filter-sum">共 <span style="color: #7ca1b5;">16</span> 間店家</div>
+      <div class="store-list-filter-time">時間排序</div>
+      <img class="store-list-filter-img" src="@/assets/img/regular/sort-forward_n.png" alt="sort-forward_n">
+    </div>
+
     <div class="store-list-box">
       <store v-for="(store, index) in storeList"
         :key="`${index}${store.name}`"
@@ -171,14 +178,42 @@ const storeList = reactive([
     margin: 0px 8px;
   }
 
+  &-filter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 60px 8px 0px;
+
+    &-sum {
+
+    }
+
+    &-time {
+      margin-left: 24px;
+    }
+
+    &-img {
+      margin-left: 20px;
+      cursor: pointer;
+    }
+  }
+
   &-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 18px;
   }
 
   &-item {
     margin: 0px 8px 36px;
+
+    /* 如果最後一行是2個元素 */
+    // https://www.zhangxinxu.com/wordpress/2019/08/css-flex-last-align/
+
+    &:last-child:nth-child(3n-1) {
+      margin-right: 408px;
+    }
   }
 
 }

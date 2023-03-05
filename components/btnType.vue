@@ -49,7 +49,7 @@ const props = defineProps(['type', 'text'])
     font-size: 14px;
     border-radius: 8px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
-    background-color: #48b4d8;
+    background-color: #e7f0f4;
   }
 
   &-white {
