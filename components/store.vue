@@ -16,9 +16,7 @@
         <div class="store-row">
           <div class="store-name">{{ props.store.name }}</div>
           <div class="store-share">
-            <nuxt-link class="store-share-link" :to="`/store/${props.store.url}`">
-              <img class="store-share-img" src="@/assets/img/regular/view_n.png" alt="view_n">
-            </nuxt-link>
+            <img class="store-share-img" src="@/assets/img/regular/view_n.png" alt="view_n">
             <img class="store-share-collect" src="@/assets/img/regular/like_n.png" alt="like_n">
           </div>
         </div>
@@ -64,7 +62,9 @@
                   :type="'sblue'"
                 />
               </div>
-              <btnType class="store-popup-btn" :text="'詳細介紹'" :type="'light'" />
+              <nuxt-link class="store-share-link" :to="`/store/${props.store.url}`">
+                <btnType class="store-popup-btn" :text="'詳細介紹'" :type="'light'" />
+              </nuxt-link>
             </div>
             <div>
               <div class="store-popup-grey">
@@ -96,11 +96,6 @@
 
 const props = defineProps(['store'])
 let isPopup = ref(false)
-
-function test() {
-  console.log(isPopup.value)
-  isPopup.value = !isPopup.value
-}
 
 </script>
 

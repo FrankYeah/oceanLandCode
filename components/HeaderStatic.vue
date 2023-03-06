@@ -63,6 +63,7 @@
   position: fixed;
   width: 100vw;
   background-color: white;
+  z-index: 1;
 
   &-outer {
     max-width: 1200px;
