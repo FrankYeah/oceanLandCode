@@ -78,7 +78,7 @@
                   <img class="about-group-card-icon" src="@/assets/img/author/author_web_n.png" alt="deco_wave">
                 </a>
                 <a class="about-group-card-href" :href="`${member.ig}`" target="_blank">
-                  <img class="about-group-card-icon" src="@/assets/img/author/author_ig_h.png" alt="deco_wave">
+                  <img class="about-group-card-icon" src="@/assets/img/author/author_ig_n.png" alt="deco_wave">
                 </a>
               </div>
             </div>
@@ -93,12 +93,16 @@
 
     <div class="about-thank">
       <headName class="about-thank-title" :en="'( THANKS )'" :text="'感謝單位'" />
+      <div class="about-thank-line"></div>
       <div class="about-thank-outer">
-        <div class="about-thank-box">
-          <div class="about-thank-title">陽明海運</div>
+        <div v-for="(thank, index) in thankList"
+          :key="`${index}${thank.name}`"
+          class="about-thank-box"
+        >
+          <div class="about-thank-title">{{ thank.name }}</div>
           <div class="about-thank-row">
             <div class="about-thank-img"></div>
-            <div class="about-thank-text">基隆市除今年於各區辦理狗。基隆市除。</div>
+            <div class="about-thank-text">{{ thank.text }}</div>
           </div>
         </div>
       </div>
@@ -187,6 +191,24 @@ function closePopup(popup:boolean) {
   isPopup.value = popup
 }
 
+const thankList = reactive([
+  {
+    photo: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg',
+    name: '陽明海運',
+    text: '基隆市除今年於各區辦理狗。基隆市除。'
+  },
+  {
+    photo: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg',
+    name: '陽明海運',
+    text: '基隆市除今年於各區辦理狗。基隆市除。'
+  },
+  {
+    photo: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg',
+    name: '',
+    text: '基隆市除今年於各區辦理狗。基隆市除。'
+  },
+])
+
 </script>
 
 <style lang="scss" scoped>
@@ -272,6 +294,7 @@ function closePopup(popup:boolean) {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0px auto;
   }
 
   &-box {
@@ -433,33 +456,50 @@ function closePopup(popup:boolean) {
   }
 
   &-thank {
+    max-width: 1088px;
+    margin: 0px auto 172px;
 
     &-title {
 
+    }
+
+    &-line {
+      height: 1px;
+      margin: 60px 0px 24px;
+      background-color: #8db3c8;
     }
 
     &-outer {
-      
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
 
     &-box {
-      
+      width: 485px;
+      margin-bottom: 48px;
     }
 
     &-title {
-      
+      font-size: 18px;
+      color: #7ca1b5;
     }
 
     &-row {
-      
+      display: flex;
+      margin-top: 14px;
     }
 
     &-img {
-      
+      width: 240px;
+      height: 160px;
+      border-radius: 8px;
+      background-color: #8db3c8;
     }
 
     &-text {
-      
+      width: 232px;
+      margin: 24px 0px 0px 24px;
     }
     
   }
