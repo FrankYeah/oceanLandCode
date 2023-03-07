@@ -38,11 +38,11 @@
           <img class="header-icon hover-image" src="@/assets/img/navigation/fb_h.png" alt="logo">
         </a>
         <div class="header-line"></div>
-        <nuxt-link to="/" class="header-href">
+        <nuxt-link to="/collect" class="header-href">
           <img class="header-icon default-image" src="@/assets/img/navigation/like_n.png" alt="logo">
           <img class="header-icon hover-image" src="@/assets/img/navigation/like_h.png" alt="logo">
         </nuxt-link>
-        <nuxt-link to="/" class="header-href">
+        <nuxt-link to="/search" class="header-href">
           <img class="header-icon default-image" src="@/assets/img/navigation/search_n.png" alt="logo">
           <img class="header-icon hover-image" src="@/assets/img/navigation/search_h.png" alt="logo">
         </nuxt-link>
