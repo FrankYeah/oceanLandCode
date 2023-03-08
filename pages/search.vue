@@ -250,17 +250,18 @@ const tourList = reactive([
       margin-top: 58px;
       font-size: 24px;
       font-weight: bold;
+      text-align: center;
     }
 
     &-img {
-      margin-top: 16px;
+      margin: 16px auto 0px;
     }
 
     &-box {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      margin-top: 6px;
+      margin-top: 36px;
     }
 
     &-item {
