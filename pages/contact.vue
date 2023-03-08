@@ -83,11 +83,13 @@ const inputInfo = reactive({
 .el-textarea__inner {
   height: 48px;
   border: solid 1px #8db3c8;
+  border-radius: 6px;
 }
 
 .el-input__wrapper {
   height: 48px;
   border: solid 1px #8db3c8;
+  border-radius: 6px;
 }
 
 </style>
