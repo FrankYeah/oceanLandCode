@@ -1,5 +1,5 @@
 <template>
-  <div class="index">
+  <div class="write">
   </div>
 </template>
 
@@ -10,13 +10,13 @@
 
 <style lang="scss" scoped>
 
-.index {
+.write {
   
 }
 
 @media( max-width: 1023px ){
 
-.index {
+.write {
 
 
 
