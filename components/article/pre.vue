@@ -27,9 +27,9 @@
     <div class="article-pre-right">
       <div class="article-pre-link">
         <nuxt-link to="/">首頁</nuxt-link>
-        <div>/</div>
+        <div class="article-pre-slash">/</div>
         <nuxt-link to="/store">店家</nuxt-link>
-        <div>/</div>
+        <div class="article-pre-slash">/</div>
         <div class="article-pre-current">永晝海濱美術館</div>
       </div>
       <div class="article-pre-photo"></div>
@@ -146,14 +146,15 @@ const props = defineProps(['en'])
       display: flex;
       align-items: center;
       margin-top: 90px;
+    }
 
-      & div {
-        margin: 0px 16px;
-      }
+    &-slash {
+      margin: 0px 16px; 
     }
 
     &-current {
       color: #bcbcbc;
+      margin: 0px;
     }
 
     &-photo {
