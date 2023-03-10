@@ -7,7 +7,7 @@
           <div class="note-pre-link">
             <nuxt-link to="/">首頁</nuxt-link>
             <div class="note-pre-slash">/</div>
-            <nuxt-link to="/store">店家</nuxt-link>
+            <nuxt-link to="/store-list">店家</nuxt-link>
             <div class="note-pre-slash">/</div>
             <div class="note-pre-current">永晝海濱美術館</div>
           </div>
