@@ -26,13 +26,14 @@ const props = defineProps(['text', 'en'])
   }
 
   &-title {
+    margin-top: 10px;
     font-weight: bold;
-    margin-top: 6px;
+    line-height: 1;
     font-size: 36px;
   }
 
   &-wave {
-    margin-top: 6px;
+    margin-top: 12px;
   }
 
 }
