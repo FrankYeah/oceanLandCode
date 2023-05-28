@@ -1,8 +1,8 @@
 <template>
   <div class="collect">
     <div class="collect-text-box">
-      <headName :en="'( SEARCH )'" :text="'搜尋'" />
-      <div class="collect-text">已收藏<span style="color: #7ca1b5;">7</span> 篇店家及 <span style="color: #7ca1b5;">3</span> 篇遊程</div>
+      <headName :en="'( COLLECT )'" :text="'收藏'" />
+      <div class="collect-text">已收藏 <span style="color: #7ca1b5;">7</span> 篇店家及 <span style="color: #7ca1b5;">3</span> 篇遊程</div>
     </div>
     <div class="collect-banner">
       <div v-for="(n) in 120" :key="n"

@@ -10,7 +10,7 @@
       <div class="footer-right">
         <div class="footer-box">
           <div class="footer-title">Get in Touch</div>
-          <div class="footer-mail">frank@siddharam.com</div>
+          <div class="footer-mail">hello@oceanland.tw</div>
           <div class="footer-social">
             <a class="footer-href" href="https://www.instagram.com/sidd.blue/" target="_blank">
               <img class="footer-social-icon default-image" src="@/assets/img/footer/ig.png" alt="logo">

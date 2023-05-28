@@ -112,7 +112,7 @@
                   </div>
                   <div class="header-modal-dl"></div>
                   <div class="header-modal-item-touch">Get in Touch</div>
-                  <div class="header-modal-item-mail">frank@siddharam.com</div>
+                  <div class="header-modal-item-mail">hello@oceanland.tw</div>
                   <div class="header-modal-item-social">
                     <a class="header-modal-item-href" style="margin-right: 16px;" href="https://www.instagram.com/sidd.blue/" target="_blank">
                       <img class="header-modal-item-icon" src="@/assets/img/footer/ig.png" alt="logo">
