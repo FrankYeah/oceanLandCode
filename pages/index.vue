@@ -7,21 +7,47 @@
         <div class="index-main-head-box">
           <div class="index-main-head">與海有關</div>
           <div class="index-main-head-en">
-            Sea, Mountain, Food
+            Sea, Mountain,<span class="index-main-head-en-break"></span> Food
             and Treasure
           </div>
         </div>
-        <div class="index-main-en">all about seas in keelung</div>
+        <div class="index-main-en">ALL ABOUT SEAS IN KEELUNG</div>
       </div>
       <div class="index-main-box">
-        <div class="index-main-pic"></div>
+        
+        
+        <div class="index-main-progress">
+          <VerticalProgressBar :progress="percentage" />
+        </div>
+
+        <swiper-container 
+          class="index-main-swiper"
+          effect="fade"
+          :autoplay="{
+            delay: autoplayTime,
+            disableOnInteraction: false,
+          }"
+          :navigation="navigation"
+        
+        >
+            <swiper-slide>
+                <div class="index-main-pic bg-green "></div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="index-main-pic bg-blue"></div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="index-main-pic bg-red"></div>
+            </swiper-slide>
+
+    </swiper-container>
 
         <div class="index-main-card">
           <div class="index-main-row">
             <div class="index-main-card-title">與海有關</div>
             <div class="index-main-arrow-box">
-              <img class="index-main-arrow" src="@/assets/img/regular/arrow-slides_b_n.png" alt="logo">
-              <img class="index-main-arrow index-main-arrow-reverse" src="@/assets/img/regular/arrow-slides_b_n.png" alt="logo">
+              <img class="index-main-arrow navigation-prev" src="@/assets/img/regular/arrow-slides_b_n.png" alt="logo">
+              <img class="index-main-arrow-reverse navigation-next" src="@/assets/img/regular/arrow-slides_b_n.png" alt="logo">
             </div>
           </div>
           <div class="index-main-text">介紹我最愛的城市，挖掘與紀錄每一個基隆在地故事，我被感動過，才會熱愛這座城市。</div>
@@ -41,10 +67,10 @@
 
     <div class="index-store">
       <div class="index-store-left">
-        <headName class="index-store-title" :en="'( Featured Store )'" :text="'精選店家'" />
+        <headName class="index-store-title" :en="'( FEATURED STORE )'" :text="'精選店家'" :text2="'Keelung Flavor'" />
         <div class="index-store-text">山群環抱俯瞰基隆，蘊藏著一間間店家，值得我們深入挖掘。</div>
         <div class="index-store-en">Keelung Flavor</div>
-        <btnType :text="'三分鐘基隆旅遊懶人包'" :type="'transparent'" />
+        <btnType class="index-store-btnType" :text="'三分鐘基隆旅遊懶人包'" :type="'transparent'" />
         <btnType :text="'全部店家'" :type="'blue'" class="index-store-all" />
       </div>
       <div class="index-store-right">
@@ -60,22 +86,29 @@
       <div class="index-tour-outer">
         <div class="index-tour-row-box">
           <div class="index-tour-row">
-            <headName :en="'( Featured Tour )'" :text="'精選遊程'" />
+            <headName :en="'( FEATURED TOUR )'" :text="'精選遊程'" :text2="'Keelung Landscape'" />
             <div class="index-tour-text">基隆有綿延的海岸，天然海泳池可與魚群共遊，有山群環抱俯瞰城市風景。</div>
             <div class="index-tour-en">Keelung Landscape</div>
           </div>
-          <div class="index-tour-row">
-            <img class="index-tour-arrow" src="@/assets/img/regular/arrow-slides_n.png" alt="logo">
-            <img class="index-tour-arrow index-tour-arrow-last" src="@/assets/img/regular/arrow-slides_n.png" alt="logo">
+          <div class="index-tour-row index-tour-row-mini">
+            <img class="index-tour-arrow tour-navigation-prev " src="@/assets/img/regular/arrow-slides_n.png" alt="logo">
+            <img class="index-tour-arrow tour-navigation-next index-tour-arrow-last" src="@/assets/img/regular/arrow-slides_n.png" alt="logo">
             <btnType class="index-tour-btn" :text="'全部遊程'" :type="'blue'" />
           </div>
         </div>
         <div class="index-tour-box">
-          <tour v-for="(tour, index) in tourList"
-            :key="`${index}${tour.name}`"
-            :tour="tour"
-            class="index-tour-card"
-          />
+          <swiper-container :navigation="tourNavigation"  class="tourSwiper" init="false">
+            <swiper-slide 
+              class="index-tour-swiper-slide" 
+              v-for="(tour, index) in tourList" 
+              :key="`${index}${tour.name}`"
+            >
+              <tour 
+                :tour="tour"
+                class="index-tour-card"
+              />
+          </swiper-slide>
+        </swiper-container>
         </div>
       </div>
     </div>
@@ -83,14 +116,12 @@
     <div class="index-new">
       <div class="index-new-outer">
         <div class="index-new-title">
-          <headName :en="'( Latest News )'" :text="'最新活動'" />
+         <headName class="index-new-headName" :en="'( Latest News )'" :text="'最新活動'" />
         </div>
         <div class="index-new-inner">
           <div class="index-new-box">
             <news class="index-new-card" />
             <news class="index-new-card" />
-          </div>
-          <div class="index-new-box">
             <news class="index-new-card" />
           </div>
         </div>
@@ -100,13 +131,61 @@
 </template>
 
 <script lang="ts" setup>
+import { register } from 'swiper/element/bundle';
+register();
+const percentage = ref<number>(0);
+const navigation = reactive({
+  nextEl: '.navigation-next',
+  prevEl: '.navigation-prev',
+});
+
+const tourNavigation = reactive({
+  nextEl: '.tour-navigation-next',
+  prevEl: '.tour-navigation-prev',
+});
+  const  autoplayTime = 5000;
+
+ onMounted(() => {
+  const swiperEl:any = document.querySelector("swiper-container");
+  swiperEl.addEventListener("autoplaytimeleft", (e:any) => {
+    const [swiper, time, progress] = e.detail;
+    // 百分比變數
+    percentage.value = Math.round(time / autoplayTime * 100)
+  });
+
+  const tourSwiperEl:any = document.querySelector('.tourSwiper')
+    Object.assign(tourSwiperEl, {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      // pagination: {
+      //   clickable: true,
+      // },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        900: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 10,
+        },
+      },
+    });
+
+    tourSwiperEl.initialize();
+ })
+
 
 const storeList = reactive([
   { 
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-    tag: ['綠葉環繞', '不限時'],
+    tag: ['環繞', '不限時', '環繞', '不限時', '綠葉環繞', '不限'],
     bg: ['https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg', 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/91472862/73a0aa62-5266-4dfb-aaff-e9751f79f667.jpg'],
     location: '基隆市仁愛區仁二路 236 號',
     tel: '02 2428 1159',
@@ -169,47 +248,57 @@ const tourList = reactive([
     bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
     writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
   },
-  // { 
-  //   name: '見書店',
-  //   url: '20230305',
-  //   des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-  //   bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
-  //   writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
-  // },
-  // { 
-  //   name: '見書店',
-  //   url: '20230305',
-  //   des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-  //   bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
-  //   writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
-  // },
-  // { 
-  //   name: '見書店',
-  //   url: '20230305',
-  //   des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-  //   bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
-  //   writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
-  // },
-  // { 
-  //   name: '見書店',
-  //   url: '20230305',
-  //   des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-  //   bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
-  //   writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
-  // },
-  // { 
-  //   name: '見書店',
-  //   url: '20230305',
-  //   des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-  //   bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
-  //   writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
-  // },
+  { 
+    name: '見書店',
+    url: '20230305',
+    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
+    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
+    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
+  },
+  { 
+    name: '見書店',
+    url: '20230305',
+    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
+    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
+    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
+  },
+  { 
+    name: '見書店',
+    url: '20230305',
+    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
+    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
+    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
+  },
+  { 
+    name: '見書店',
+    url: '20230305',
+    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
+    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
+    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
+  },
+  { 
+    name: '見書店',
+    url: '20230305',
+    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
+    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
+    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
+  },
 ])
 
 </script>
 
 <style lang="scss" scoped>
+.bg-green {
+    background-color: rgb(138, 226, 138) !important;
+}
 
+.bg-blue {
+    background-color: rgb(130, 130, 227) !important;
+}
+
+.bg-red {
+    background-color: rgb(212, 93, 93) !important;
+}
 .index {
   padding: 126px 0px 0px;
   
@@ -245,6 +334,8 @@ const tourList = reactive([
       margin-left: 31px;
       font-size: 36px;
       color: #48b4d8;
+      font-family:'authenia';
+      transform: rotate(-6deg);
     }
 
     &-en {
@@ -266,14 +357,24 @@ const tourList = reactive([
       background-color: #7ca1b5;
     }
 
+    &-progress {
+      position: absolute;
+      bottom: 75px;
+      height: 441px;
+      right: 115px;
+    }
+
     &-card {
+      z-index: 1;
       position: absolute;
       right: 0px;
-      bottom: 40px;
+      top: 225px;
       width: 674px;
       padding: 36px 48px 80px;
       color: white;
       background-image: linear-gradient(to bottom, #8db3c8, #64b4d2);
+      border-radius: 20px;
+      
     }
 
     &-row {
@@ -295,7 +396,8 @@ const tourList = reactive([
     &-arrow {
       width: 48px;
       height: 48px;
-      margin-left: 30px;
+      margin-right: 30px;
+      cursor: pointer;
     }
 
     &-arrow-reverse {
@@ -323,6 +425,7 @@ const tourList = reactive([
       height: 6px;
       margin-right: 16px;
     }
+
   }
   
   &-map {
@@ -361,6 +464,9 @@ const tourList = reactive([
     &-en {
       margin: 15px 0px 60px;
       font-size: 36px;
+      font-family: "authenia";
+      color: #48b4d8;
+      transform: rotate(-6deg);
     }
 
     &-all {
@@ -411,12 +517,15 @@ const tourList = reactive([
     &-en {
       font-size: 36px;
       color: #48b4d8;
+      font-family: "authenia";
+      transform: rotate(-6deg);
     }
 
     &-arrow {
       width: 48px;
       height: 48px;
       margin-right: 24px;
+      cursor: pointer;
     }
 
     &-arrow-last {
@@ -461,23 +570,260 @@ const tourList = reactive([
     }
 
     &-box {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -5px;
       
     }
 
     &-card {
-      margin-bottom: 16px;
+      margin: 5px;
     }
     
   }
 }
 
-@media( max-width: 1023px ){
-
+@media screen and (max-width: 1200px){
 .index {
+  padding: 78px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+  &-main {
+    max-width: 100vw;
+    margin: auto;
 
+    &-title {
+      font-size: 14px;
+    }
 
-}
+    &-outer {
+      margin-left: 20px;
+    }
+
+    &-head-box {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 12px;
+      width:100%;
+    }
+
+    &-head {
+      font-size: 48px;
+      letter-spacing: 2.4px;
+      margin: 13px 9.5px 0 0;
+      white-space: nowrap;
+    }
+
+    &-head-en {
+      font-size: 16px;
+      margin: 2.1px 10.5px 11.9px 9.5px;
+      letter-spacing: 0.8px;
+      font-weight: normal;
+      font-stretch: normal;
+      
+    }
+
+    &-head-en-break::before {
+      content: "\A";
+      white-space: pre;
+    }
+
+    &-en {
+      font-size: 18px;
+      letter-spacing: 2.88px;
+    }
+
+    &-box {
+      width: 100vw;
+    }
+
+    &-swiper {
+      width: 100%;
+    }
+
+    &-progress {
+      position: absolute;
+      bottom: 13px;
+      height: 441px;
+      right: 15vw;
+    }
+
+    &-pic {
+      width: 80vw;
+      height: 458px;
+      border-radius: 0 8px 0 0 ;
+    }
+
+    &-card {
+      right: 10vw;
+      width: 330px;
+      height: 326px;
+      border-radius: 8px;
+    }
+
+    &-card-title {
+      font-size: 24px;
+      letter-spacing: 1.2px;
+    }
+
+    &-arrow-box {
+      position: absolute;
+      bottom: 20px;
+    }
+
+    &-text {
+      font-size: 15px;
+      letter-spacing: 1.5px;
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    &-tag {
+      opacity: 0.7;
+    }
+
+    &-about {
+      margin-top: 16px;
+    }
+
+    &-arrow {
+      width: 36px;
+      height: 36px;
+      margin-right: 30px;
+    }
+
+    &-arrow-reverse {
+      width: 36px;
+      height: 36px;
+      margin-right: 30px;
+    }
+
+  
+
+  }
+
+  &-map {
+    width: 80vw;
+    margin: 150px 10vw 0px 10vw;
+    padding: 0px;
+
+    &-img {
+      width: 100%;
+      height: 600px;
+      margin: auto;
+      background-color: burlywood;
+    }
+  }
+
+  &-new {
+    &-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: auto;
+      }
+  }
+
+  &-store {
+    flex-direction: column;
+    width: 100vw;
+    &-en {
+      display: none;
+    }
+    &-text {
+      margin-top: 24px;
+      margin-left: 30px;
+      font-size: 17px;
+      letter-spacing: 1.7px;
+    }
+    &-btnType {
+      margin-top: 30px;
+      margin-left: 30px;
+    }
+    &-all {
+      margin-left: 30px;
+    }
+    &-right {
+      width: 100vw;
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  
+  }
+  
+  &-tour {
+    margin-top: 0px;
+    padding: 110px 0px 0px;
+    width: 100%;
+
+    &-outer {
+      width: 100%;
+    }
+
+    &-row {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-row-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-text {
+      font-size: 17px;
+      letter-spacing: 1.7px;
+      margin-top: 15px;
+    }
+
+    &-en {
+      display: none;
+    }
+
+    &-row-mini {
+      display: flex;
+      flex-direction: row;
+      margin-top: 30px;
+      margin-left: 30px;
+      align-items: center;
+    }
+
+    &-arrow {
+      width: 32px;
+      height: 32px;
+    }
+
+    &-btn {
+      margin-left: 75px;
+    }
+
+    &-swiper-slide{
+      width: 100vw;
+      padding: 0 30px;
+    }
+  }
+
+  &-new {
+    padding-top: 116px;
+    &-headName{
+      align-items: center;
+    }
+    &-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &-title {
+      padding-bottom: 30px;
+    }
+  }
+  
+  }
 }
 
 </style>

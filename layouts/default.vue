@@ -3,7 +3,7 @@
     <HeaderStatic />
     <NuxtPage />
     <FooterStatic />
-    <toTop />
+    <toTop id="toTopId"/>
     <slot />
   </div>
 </template>

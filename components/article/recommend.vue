@@ -1,12 +1,12 @@
 <template>
-  <div class="article-store">
-    <headName :en="'( STORES )'" :text="'店家推薦'" />
-    <div class="article-store-box">
-      <store v-for="(store, index) in props.list"
-        :key="`${index}${store.name}`"
-        :store="store"
-        class="article-store-item"
-      />
+  <div class="box">
+    <headName class="tour-head" :en="'( STORES )'" :text="'店家推薦'" />
+    <div class="store-box">
+      <store v-for="(store, index) in props.list.storeList" :key="`${index}${store.name}`" :store="store" class="item" />
+    </div>
+    <headName class="tour-head" :en="'( TOURS )'" :text="'遊程推薦'" />
+    <div class="tour-box">
+      <tour v-for="(tour, index) in props.list.tourList" :key="`${index}${tour.name}`" :tour="tour" class="item" />
     </div>
   </div>
 </template>
@@ -14,37 +14,76 @@
 <script setup>
 
 const props = defineProps(['list'])
-
 </script>
 
 <style lang="scss" scoped>
+.box {
+  max-width: 1200px;
+  margin: 100px auto 100px;
 
-.article {
+  .tour-head {
+    margin-top: 118px;
+    margin-bottom: 71px;
+  }
 
-  &-store {
-    max-width: 1200px;
-    margin: 100px auto 100px;
+  .store-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
 
-    &-box {
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 60px;
-    }
-
-    &-item {
+    .item {
       margin: 0px 8px;
     }
-
   }
-    
+
+  .tour-box {
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    .item {
+      margin-right: 16px;
+      margin-bottom: 16px;
+    }
+  }
 }
 
-@media( max-width: 1023px ){
 
-.know-more {
+@media screen and (max-width: 1200px) {
+  .box {
+    width: 100%;
 
+    .tour-head {
+      margin-top: 118px;
+      margin-bottom: 71px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .store-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 60px;
+
+      .item {
+        margin: 0px 8px;
+      }
+    }
+
+    .tour-box {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0;
+
+      .item {
+        margin-right: 16px;
+        margin-bottom: 16px;
+      }
+    }
+  }
 }
-
-}
-
 </style>

@@ -10,11 +10,7 @@
       </div>
 
       <div class="tour-list-box">
-        <tour v-for="(tour, index) in tourList"
-          :key="`${index}${tour.name}`"
-          :tour="tour"
-          class="tour-list-item"
-        />
+        <tour v-for="(tour, index) in tourList" :key="`${index}${tour.name}`" :tour="tour" class="tour-list-item" />
       </div>
     </div>
   </div>
@@ -23,49 +19,49 @@
 <script lang="ts" setup>
 
 const tourList = reactive([
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
     bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
     writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
   },
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
     bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
     writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
   },
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
     bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
     writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
   },
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
     bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
     writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
   },
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
     bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
     writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
   },
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
     bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
     writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
   },
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
@@ -77,7 +73,6 @@ const tourList = reactive([
 </script>
 
 <style lang="scss" scoped>
-
 .tour-list {
   padding: 120px 0px 164px;
   text-align: center;
@@ -87,16 +82,14 @@ const tourList = reactive([
     max-width: 1200px;
     margin: auto;
   }
-  
+
   &-filter {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin: 48px 8px 0px;
 
-    &-sum {
-
-    }
+    &-sum {}
 
     &-time {
       margin-left: 24px;
@@ -128,13 +121,54 @@ const tourList = reactive([
 
 }
 
-@media( max-width: 1023px ){
+@media screen and (max-width: 1200px) {
 
-.tour-list {
+  .tour-list {
+    padding: 120px 0px 164px;
+    text-align: center;
+    background-color: #f6f9fc;
 
+    &-outer {
+      width: 100%;
+      margin: auto;
+    }
 
+    &-filter {
+      justify-content: center;
 
+      &-sum {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+
+      &-time {
+        margin-left: 24px;
+      }
+
+      &-img {
+        margin-left: 20px;
+        cursor: pointer;
+      }
+    }
+
+    &-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 18px;
+    }
+
+    &-item {
+      margin: 0px 8px 36px;
+
+      /* 如果最後一行是2個元素 */
+      // https://www.zhangxinxu.com/wordpress/2019/08/css-flex-last-align/
+
+      &:last-child:nth-child(3n-1) {
+        margin-right: 408px;
+      }
+    }
+
+  }
 }
-}
-
 </style>

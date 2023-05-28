@@ -1,9 +1,6 @@
 <template>
   <div class="article-deco">
-    <div  v-for="(n) in 10"
-      :key="n"
-      class="article-deco-dot"
-    ></div>
+    <div v-for="(n) in 10" :key="n" class="article-deco-dot"></div>
   </div>
 </template>
 
@@ -14,7 +11,6 @@ const props = defineProps(['en'])
 </script>
 
 <style lang="scss" scoped>
-
 .article {
 
   &-deco {
@@ -30,15 +26,14 @@ const props = defineProps(['en'])
     }
 
   }
-    
-}
-
-@media( max-width: 1023px ){
-
-.know-more {
 
 }
 
-}
+@media screen and (max-width: 1200px) {
 
+  .article-deco {
+    display: none;
+  }
+
+}
 </style>

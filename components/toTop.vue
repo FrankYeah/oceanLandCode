@@ -28,8 +28,8 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-
 .to-top {
+  z-index: 100;
   position: fixed;
   right: 48px;
   bottom: 20vh;
@@ -38,16 +38,16 @@ onMounted(() => {
     width: 48px;
     cursor: pointer;
   }
-  
-}
-
-@media( max-width: 1023px ){
-
-.to-top {
-  
 
 }
 
-}
+@media(max-width: 1023px) {
 
+  .to-top {
+    &-icon {
+      width: 38px;
+    }
+  }
+
+}
 </style>

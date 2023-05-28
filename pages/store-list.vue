@@ -1,44 +1,56 @@
 <template>
-  <div class="store-list">
-    <headName class="store-list-head" :en="'( STORES )'" :text="'所有店家'" />
-    <div class="store-list-area-row">
-      <div class="store-list-area-box"
-        v-for="(area, index) in areaList"
-        :key="`${index}${area.name}`"
-      >
-        <div v-if="area.url" :style="`background-image: url('${area.url}')`"
-          class="store-list-area-inner"
+  <div class="box">
+    <div class="store-list">
+      <headName class="store-list-head" :en="'( STORES )'" :text="'所有店家'" />
+      <div class="store-list-area-row">
+        <div class="store-list-area-box"
+          v-for="(area, index) in areaList"
+          :key="`${index}${area.name}`"
         >
-          <div class="store-list-area-bg"></div>
-          <div class="store-list-area-name">{{ area.name }}</div>
+          <div v-if="area.url" :style="`background-image: url('${area.url}')`"
+            class="store-list-area-inner"
+          >
+            <div class="store-list-area-bg"></div>
+            <div class="store-list-area-name">{{ area.name }}</div>
+          </div>
+          <div v-else :style="`background-color: black`"
+            class="store-list-area-inner"
+          >{{ area.name }}</div>
         </div>
-        <div v-else :style="`background-color: black`"
-          class="store-list-area-inner"
-        >{{ area.name }}</div>
       </div>
-    </div>
+      <div class="store-list-area-mineRow">      
+        <el-select v-model="value" class="store-list-area-mineRow" placeholder="所有地區" size="large">
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          />
+        </el-select>
+      </div>
 
-    <div class="store-list-type">
-      <btnType v-for="(type, index) in typeList"
-        :key="`${index}${type.name}`"
-        class="store-list-type-btn"
-        :text="`${type.name}`"
-        :type="'round'"
-      />
-    </div>
+      <div class="store-list-type">
+        <btnType v-for="(type, index) in typeList"
+          :key="`${index}${type.name}`"
+          class="store-list-type-btn"
+          :text="`${type.name}`"
+          :type="'round'"
+        />
+      </div>
 
-    <div class="store-list-filter">
-      <div class="store-list-filter-sum">共 <span style="color: #7ca1b5;">16</span> 間店家</div>
-      <div class="store-list-filter-time">時間排序</div>
-      <img class="store-list-filter-img" src="@/assets/img/regular/sort-forward_n.png" alt="sort-forward_n">
-    </div>
+      <div class="store-list-filter">
+        <div class="store-list-filter-sum">共 <span style="color: #7ca1b5;">16</span> 間店家</div>
+        <div class="store-list-filter-time">時間排序</div>
+        <img class="store-list-filter-img" src="@/assets/img/regular/sort-forward_n.png" alt="sort-forward_n">
+      </div>
 
-    <div class="store-list-box">
-      <store v-for="(store, index) in storeList"
-        :key="`${index}${store.name}`"
-        :store="store"
-        class="store-list-item"
-      />
+      <div class="store-list-box">
+        <store v-for="(store, index) in storeList"
+          :key="`${index}${store.name}`"
+          :store="store"
+          class="store-list-item"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -56,8 +68,39 @@ const typeList = reactive([
   { name: '所有分類' },
   { name: '咖啡廳'},
   { name: '麵包店' },
-  { name: '甜點店' }
+  { name: '甜點店' },
+  { name: '咖啡廳'},
+  { name: '麵包店' },
+  { name: '咖啡廳'},
+  { name: '麵包店' },
+  { name: '咖啡廳'},
+  { name: '麵包店' },
 ])
+
+const value = ref('')
+
+const options = [
+  {
+    value: 'Option1',
+    label: 'Option1',
+  },
+  {
+    value: 'Option2',
+    label: 'Option2',
+  },
+  {
+    value: 'Option3',
+    label: 'Option3',
+  },
+  {
+    value: 'Option4',
+    label: 'Option4',
+  },
+  {
+    value: 'Option5',
+    label: 'Option5',
+  },
+]
 
 const storeList = reactive([
   { 
@@ -115,13 +158,17 @@ const storeList = reactive([
 </script>
 
 <style lang="scss" scoped>
+.box {
+  width: 100%;
+  background-color: #f6f9fc;
 
+}
 .store-list {
   padding: 120px 0px 164px;
   max-width: 1200px;
   margin: auto;
   text-align: center;
-
+  
   &-head {
     
   }
@@ -130,6 +177,10 @@ const storeList = reactive([
     display: flex;
     justify-content: center;
     margin-top: 18px;
+  }
+
+  &-area-mineRow {
+    display: none;
   }
 
   &-area-box {
@@ -201,7 +252,7 @@ const storeList = reactive([
   &-box {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-top: 18px;
   }
 
@@ -211,20 +262,49 @@ const storeList = reactive([
     /* 如果最後一行是2個元素 */
     // https://www.zhangxinxu.com/wordpress/2019/08/css-flex-last-align/
 
-    &:last-child:nth-child(3n-1) {
-      margin-right: 408px;
-    }
+    // &:last-child:nth-child(3n-1) {
+    //   margin-right: 408px;
+    // }
   }
 
 }
 
-@media( max-width: 1023px ){
+@media screen and (max-width: 1200px){
+  .store-list {
+    width: 80vw;
+    &-head {
+      align-items: center;
+    }
+    &-area {
+      &-row {
+        display: none;
+      }
+      &-mineRow {
+        display: block;
+        width: 100%;
+        padding: 10px 5px;
+        position: relative;
+      }
+      &-select {
+        width: 100%;
+        height: 42px;
+        border-radius: 6px;
+        border: solid 1px #8db3c8;
+      }
 
-.store-list {
 
-
-
-}
+    }
+    &-type {
+      display: flex;
+      flex-wrap: wrap;
+      &-btn {
+        margin: 0px 5px 10px 0px;
+      }
+    }
+    &-box {
+      justify-content: center;
+    }
+  }
 }
 
 </style>

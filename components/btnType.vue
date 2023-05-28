@@ -24,7 +24,7 @@ const props = defineProps(['type', 'text'])
   display: flex;
 
   &-btn {
-
+    white-space:nowrap;
   }
 
   &-transparent {
@@ -75,12 +75,25 @@ const props = defineProps(['type', 'text'])
   
 }
 
-@media( max-width: 1023px ){
+@media screen and (max-width: 1200px){
 
-.footer {
-  
+  .btn-type {
+    &-transparent {
+      font-size: 15px;
+      letter-spacing: 1.5px;
+    }
 
-}
+    &-blue {
+      font-size: 16px;
+      letter-spacing: 1.6px;
+      padding: 10px 26px;
+    }
+
+    &-white {
+      font-size: 14px;
+      letter-spacing: 1.4px;
+    }
+  }
 
 }
 

@@ -1,31 +1,27 @@
 <template>
   <div class="note-img">
-        <div class="note-img-column">
-          <div class="note-img-photo"></div>
-          <div class="note-img-pre">廖媽媽珍奶</div>
-        </div>
-        <div class="note-img-column">
-          <div class="note-img-photo"></div>
-          <div class="note-img-pre">廖媽媽珍奶</div>
-        </div>
-        <div class="note-img-column">
-          <div class="note-img-photo"></div>
-          <div class="note-img-pre">廖媽媽珍奶</div>
-        </div>
-      </div>
+    <div class="note-img-column">
+      <div class="note-img-photo"></div>
+      <div class="note-img-pre">廖媽媽珍奶</div>
+    </div>
+    <div class="note-img-column">
+      <div class="note-img-photo"></div>
+      <div class="note-img-pre">廖媽媽珍奶</div>
+    </div>
+    <div class="note-img-column">
+      <div class="note-img-photo"></div>
+      <div class="note-img-pre">廖媽媽珍奶</div>
+    </div>
+  </div>
 </template>
 
 <script setup>
-
-const props = defineProps(['en'])
-
+const props = defineProps(["en"]);
 </script>
 
 <style lang="scss" scoped>
-
 .note {
-    
-    &-img {
+  &-img {
     margin-top: 42px;
     display: flex;
     justify-content: space-between;
@@ -38,7 +34,7 @@ const props = defineProps(['en'])
       width: 350px;
       height: 320px;
       border-radius: 16px;
-      background-image: url('../../assets/img/scene/scene1.jpg');
+      background-image: url("../../assets/img/scene/scene1.jpg");
       background-repeat: no-repeat;
       background-size: cover;
       background-position-x: center;
@@ -51,16 +47,17 @@ const props = defineProps(['en'])
       text-align: center;
       color: #5f6983;
     }
-    
   }
 }
 
-@media( max-width: 1023px ){
-
-.note {
-
+@media screen and (max-width: 1200px) {
+  .note {
+    &-img {
+      flex-direction: column;
+      &-pre {
+       margin-bottom: 20px;
+      }
+    }
+  }
 }
-
-}
-
 </style>

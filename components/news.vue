@@ -61,11 +61,17 @@
   
 }
 
-@media( max-width: 1023px ){
+@media screen and (max-width: 1200px){
 
 .news {
-  
-
+  padding: 24px;
+  flex-direction: column;
+  width: 80vw;
+  &-column:first-child {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 12px;
+  }
 }
 
 }

@@ -1,79 +1,104 @@
 <template>
   <div class="note-pre">
-      <div class="note-pre-outer">
-        <div class="note-pre-left">
-          <div class="note-pre-en">( TOUR )</div>
-          <div class="note-pre-title">兩條基隆一日遊路線，看見基隆最美的風景</div>
-          <div class="note-pre-link">
-            <nuxt-link to="/">首頁</nuxt-link>
-            <div class="note-pre-slash">/</div>
-            <nuxt-link to="/store-list">店家</nuxt-link>
-            <div class="note-pre-slash">/</div>
-            <div class="note-pre-current">永晝海濱美術館</div>
-          </div>
-          <div class="note-pre-column">
-            <img class="note-pre-wave" src="@/assets/img/other/deco_wave.png" alt="logo">
-            <div class="note-pre-row">
-              <div class="note-pre-head">帶路</div>
-              <div class="note-pre-text">
-                <div class="note-pre-bold">西打藍</div>
-                <img class="note-pre-text-icon" src="@/assets/img/regular/view_n.png" alt="logo">
-              </div>
-            </div>
-            <div class="note-pre-row">
-              <div class="note-pre-head"></div>
-              <div class="note-pre-text">我是與海有關創辦人。這條行程是自己的日常，我會帶朋友們這樣玩一整天玩一整天。並且會驕傲說：「我可不用帶你們逛廟口，也能玩市區一整天唷！」</div>
-            </div>
-            <div class="note-pre-row">
-              <div class="note-pre-head">時間</div>
-              <div class="note-pre-text">4 小時</div>
-            </div>
-            <div class="note-pre-row">
-              <div class="note-pre-head">店家</div>
-              <div class="note-pre-text">
-                <div class="note-pre-bold">西打藍</div>
-                <img class="note-pre-text-icon" src="@/assets/img/regular/view_n.png" alt="logo">
-                <div class="note-pre-bold">、</div>
-                <div class="note-pre-bold">西打藍</div>
-                <img class="note-pre-text-icon" src="@/assets/img/regular/view_n.png" alt="logo">
-                <div class="note-pre-bold">、</div>
-                <div class="note-pre-bold">西打藍</div>
-                <img class="note-pre-text-icon" src="@/assets/img/regular/view_n.png" alt="logo">
-              </div>
-            </div>
-            <div class="note-pre-row">
-              <div class="note-pre-head">發布</div>
-              <div class="note-pre-text">2023-01-16</div>
+    <div class="note-pre-outer">
+      <div class="note-pre-left">
+        <div class="note-pre-en">( TOUR )</div>
+        <div class="note-pre-title">兩條基隆一日遊路線，看見基隆最美的風景</div>
+        <div class="note-pre-link">
+          <nuxt-link to="/">首頁</nuxt-link>
+          <div class="note-pre-slash">/</div>
+          <nuxt-link to="/store-list">店家</nuxt-link>
+          <div class="note-pre-slash">/</div>
+          <div class="note-pre-current">永晝海濱美術館</div>
+        </div>
+        <div class="note-pre-column">
+          <img
+            class="note-pre-wave"
+            src="@/assets/img/other/deco_wave.png"
+            alt="logo"
+          />
+          <div class="note-pre-row">
+            <div class="note-pre-head">帶路</div>
+            <div class="note-pre-text">
+              <div class="note-pre-bold">西打藍</div>
+              <img
+                class="note-pre-text-icon"
+                src="@/assets/img/regular/view_n.png"
+                alt="logo"
+              />
             </div>
           </div>
-          <div class="note-pre-row2">
-            <img class="note-pre-icon" src="@/assets/img/regular/like_n.png" alt="logo">
-            <div class="note-pre-des">尚未收藏</div>
-            <img class="note-pre-icon" src="@/assets/img/regular/keep.png" alt="logo">
-            <div class="note-pre-des">繼續閱讀</div>
+          <div class="note-pre-row">
+            <div class="note-pre-head"></div>
+            <div class="note-pre-text">
+              我是與海有關創辦人。這條行程是自己的日常，我會帶朋友們這樣玩一整天玩一整天。並且會驕傲說：「我可不用帶你們逛廟口，也能玩市區一整天唷！」
+            </div>
+          </div>
+          <div class="note-pre-row">
+            <div class="note-pre-head">時間</div>
+            <div class="note-pre-text">4 小時</div>
+          </div>
+          <div class="note-pre-row">
+            <div class="note-pre-head">店家</div>
+            <div class="note-pre-text">
+              <div class="note-pre-bold">西打藍</div>
+              <img
+                class="note-pre-text-icon"
+                src="@/assets/img/regular/view_n.png"
+                alt="logo"
+              />
+              <div class="note-pre-bold">、</div>
+              <div class="note-pre-bold">西打藍</div>
+              <img
+                class="note-pre-text-icon"
+                src="@/assets/img/regular/view_n.png"
+                alt="logo"
+              />
+              <div class="note-pre-bold">、</div>
+              <div class="note-pre-bold">西打藍</div>
+              <img
+                class="note-pre-text-icon"
+                src="@/assets/img/regular/view_n.png"
+                alt="logo"
+              />
+            </div>
+          </div>
+          <div class="note-pre-row">
+            <div class="note-pre-head">發布</div>
+            <div class="note-pre-text">2023-01-16</div>
           </div>
         </div>
-        <div class="note-pre-right">
-          <div class="note-pre-rotate">
-            <div class="note-pre-photo"></div>
-          </div>
+        <div class="note-pre-row2">
+          <img
+            class="note-pre-icon"
+            src="@/assets/img/regular/like_n.png"
+            alt="logo"
+          />
+          <div class="note-pre-des">尚未收藏</div>
+          <img
+            class="note-pre-icon"
+            src="@/assets/img/regular/keep.png"
+            alt="logo"
+          />
+          <div class="note-pre-des">繼續閱讀</div>
+        </div>
+      </div>
+      <div class="note-pre-right">
+        <div class="note-pre-rotate">
+          <div class="note-pre-photo"></div>
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script setup>
-
-const props = defineProps(['en'])
-
+const props = defineProps(["en"]);
 </script>
 
 <style lang="scss" scoped>
-
 .note {
-    
-    &-pre {
-
+  &-pre {
     &-outer {
       position: relative;
       max-width: 1200px;
@@ -81,7 +106,6 @@ const props = defineProps(['en'])
       justify-content: space-between;
       padding: 170px 0px 0px;
       margin: 0px auto;
-
     }
 
     &-left {
@@ -107,7 +131,7 @@ const props = defineProps(['en'])
     }
 
     &-slash {
-      margin: 0px 16px; 
+      margin: 0px 16px;
     }
 
     &-current {
@@ -175,11 +199,9 @@ const props = defineProps(['en'])
     }
 
     &-right {
-      
     }
 
     &-rotate {
-      
     }
 
     &-photo {
@@ -188,16 +210,71 @@ const props = defineProps(['en'])
       border-radius: 16px;
       background-color: #7ca1b5;
     }
-
   }
 }
 
-@media( max-width: 1023px ){
-
-.note {
-
+@media screen and (max-width: 1200px) {
+  .note {
+    &-pre {
+      &-outer {
+        width: 100%;
+        padding: 100px 30px 0 30px;
+        display: flex;
+        flex-direction: column;
+      }
+      &-left {
+        width: 100%;
+      }
+      &-en {
+        font-family: Lato;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.71;
+        letter-spacing: 1.4px;
+        margin-bottom: 4px;
+      }
+      &-title {
+        font-family: NotoSansCJKtc;
+        font-size: 28px;
+        font-weight: bold;
+        line-height: 1.5;
+        letter-spacing: 1.4px;
+        text-align: left;
+      }
+      &-head {
+        width: 68px;
+        font-family: NotoSansCJKtc;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.88;
+        letter-spacing: 1.6px;
+      }
+      &-text {
+        font-family: NotoSansCJKtc;
+        font-size: 16px;
+        line-height: 1.88;
+        letter-spacing: 1.6px;
+      }
+      &-row2 {
+        display: flex;
+        align-items: center;
+        margin-top: 47px;
+        margin-bottom: 26px;
+      }
+      &-right {
+        display: flex;
+        justify-content: center;
+      }
+      &-row2 {
+        display: flex;
+        justify-content: center;
+      }
+      &-photo {
+        width: 330px;
+        height: 360px;
+        border-radius: 12px;
+      }
+    }
+  }
 }
-
-}
-
 </style>

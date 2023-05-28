@@ -4,9 +4,17 @@
       <div class="about-bg-left">
         <div class="about-bg-en">( VISION )</div>
         <div class="about-bg-title">與海有關願景</div>
-        <img class="about-bg-wave" src="@/assets/img/other/deco_wave_w.png" alt="deco_wave">
+        <img
+          class="about-bg-wave"
+          src="@/assets/img/other/deco_wave_w.png"
+          alt="deco_wave"
+        />
         <div class="about-bg-read">
-          <img class="about-bg-down" src="@/assets/img/regular/keep_w.png" alt="sort-forward_n">
+          <img
+            class="about-bg-down"
+            src="@/assets/img/regular/keep_w.png"
+            alt="sort-forward_n"
+          />
           <div>繼續閱讀</div>
         </div>
       </div>
@@ -14,35 +22,77 @@
         <div class="about-bg-text">我是「與海有關」發起人西打藍。</div>
         <div class="about-bg-text">基隆，是我最愛的城市，</div>
         <div class="about-bg-text">我在這裡出生、工作、創業，</div>
-        <div class="about-bg-text-more">經常被基隆一個店家、景致、人給感動。</div>
+        <div class="about-bg-text-more">
+          經常被基隆一個店家、景致、人給感動。
+        </div>
         <div class="about-bg-text">於是想用自己文字、網站開發專業，</div>
         <div class="about-bg-text">和幾位同樣喜歡基隆的朋友，</div>
         <div class="about-bg-text">好好紀錄這座城市的故事。</div>
         <div class="about-bg-name">西打藍</div>
       </div>
     </div>
-
+    <div class="mobile mobile-about-bg">
+      <div class="vision">( VISION )</div>
+      <div class="title">與海有關願景</div>
+      <div class="img-box">
+        <img
+          class="img"
+          src="@/assets/img/other/deco_wave_w.png"
+          alt="deco_wave"
+        />
+      </div>
+      <div class="text">我是「與海有關」發起人西打藍。</div>
+      <div class="text">基隆，是我最愛的城市，</div>
+      <div class="text">我在這裡出生、工作、創業，</div>
+      <div class="text" style="margin-bottom: 24px">
+        經常被基隆一個店家、景致、人給感動。
+      </div>
+      <div class="text">於是想用自己文字、網站開發專業，</div>
+      <div class="text">和幾位同樣喜歡基隆的朋友，</div>
+      <div class="text" style="margin-bottom: 24px">
+        好好紀錄這座城市的故事。
+      </div>
+      <div class="text">西打藍</div>
+      <div class="read">
+        <img
+          class="down"
+          src="@/assets/img/regular/keep_w.png"
+          alt="sort-forward_n"
+        />
+        <div class="keepread">繼續閱讀</div>
+      </div>
+    </div>
     <div class="about-row">
       <div class="about-box">
-        <img class="about-wave" src="@/assets/img/other/deco_wave.png" alt="deco_wave">
+        <img
+          class="about-wave"
+          src="@/assets/img/other/deco_wave.png"
+          alt="deco_wave"
+        />
         <div class="about-title">
-          介紹我最愛的城市
-          挖掘有意思的在地故事，故事背後都有人
+          介紹我最愛的城市 挖掘有意思的在地故事，故事背後都有人
         </div>
-        <div class="about-text">為創造一個永續的創意發生機制，星濱山成立「永晝海濱美術館」，透過藝術、教育以及地方故事整合，沿著海港構築一座地域型的無牆美術館。2022年主題為「山頂的嘰嘰喳喳，斜斜的生活x斜斜的基隆」，共10組展覽內容、多場導覽，一起探尋基隆山海貌。</div>
+        <div class="about-text">
+          為創造一個永續的創意發生機制，星濱山成立「永晝海濱美術館」，透過藝術、教育以及地方故事整合，沿著海港構築一座地域型的無牆美術館。2022年主題為「山頂的嘰嘰喳喳，斜斜的生活x斜斜的基隆」，共10組展覽內容、多場導覽，一起探尋基隆山海貌。
+        </div>
       </div>
       <div class="about-square"></div>
     </div>
 
-    <div class="about-row">
+    <div class="about-row about-row2">
       <div class="about-square"></div>
       <div class="about-box about-box-reverse">
-        <img class="about-wave" src="@/assets/img/other/deco_wave.png" alt="deco_wave">
+        <img
+          class="about-wave"
+          src="@/assets/img/other/deco_wave.png"
+          alt="deco_wave"
+        />
         <div class="about-title">
-          介紹我最愛的城市
-          挖掘有意思的在地故事，故事背後都有人
+          介紹我最愛的城市 挖掘有意思的在地故事，故事背後都有人
         </div>
-        <div class="about-text">為創造一個永續的創意發生機制，星濱山成立「永晝海濱美術館」，透過藝術、教育以及地方故事整合，沿著海港構築一座地域型的無牆美術館。2022年主題為「山頂的嘰嘰喳喳，斜斜的生活x斜斜的基隆」，共10組展覽內容、多場導覽，一起探尋基隆山海貌。</div>
+        <div class="about-text">
+          為創造一個永續的創意發生機制，星濱山成立「永晝海濱美術館」，透過藝術、教育以及地方故事整合，沿著海港構築一座地域型的無牆美術館。2022年主題為「山頂的嘰嘰喳喳，斜斜的生活x斜斜的基隆」，共10組展覽內容、多場導覽，一起探尋基隆山海貌。
+        </div>
       </div>
     </div>
 
@@ -50,17 +100,33 @@
 
     <div class="about-group">
       <div class="about-group-row">
-        <headName class="about-group-title" :en="'( TEAM )'" :text="'團隊介紹'" />
-        <div class="about-group-text">來自世界各地與在地創作者，共創基隆文化推廣。</div>
+        <headName
+          class="about-group-title"
+          :en="'( TEAM )'"
+          :text="'團隊介紹'"
+        />
+        <div class="about-group-text">
+          來自世界各地與在地創作者，共創基隆文化推廣。
+        </div>
         <div class="about-group-en">Culture and People</div>
       </div>
+      <div class="mobile mobile-about-group-row">
+        <headName
+          class="headName"
+          :en="'( TEAM )'"
+          :text="'團隊介紹'"
+          :text2="'Culture and People'"
+        />
+        <div class="content">來自世界各地與在地創作者，共創基隆文化推廣。</div>
+      </div>
       <div class="about-group-card-outer">
-
-        <div v-for="(member, index) in memberList"
+        <div
+          v-for="(member, index) in memberList"
           :key="`${index}${member.name}`"
           class="about-group-card"
         >
-          <div :style="`background-image: url('${member.photo}')`"
+          <div
+            :style="`background-image: url('${member.photo}')`"
             class="about-group-card-img"
           ></div>
           <div class="about-group-card-row">
@@ -71,31 +137,69 @@
                 <div class="about-group-card-en">{{ member.en }}</div>
               </div>
               <div class="about-group-card-social">
-                <a class="about-group-card-href" :href="`${member.mail}`" target="_blank">
-                  <img class="about-group-card-icon" src="@/assets/img/author/author_email_n.png" alt="deco_wave">
+                <a
+                  class="about-group-card-href"
+                  :href="`${member.mail}`"
+                  target="_blank"
+                >
+                  <img
+                    class="about-group-card-icon"
+                    src="@/assets/img/author/author_email_n.png"
+                    alt="deco_wave"
+                  />
                 </a>
-                <a class="about-group-card-href" :href="`${member.website}`" target="_blank">
-                  <img class="about-group-card-icon" src="@/assets/img/author/author_web_n.png" alt="deco_wave">
+                <a
+                  class="about-group-card-href"
+                  :href="`${member.website}`"
+                  target="_blank"
+                >
+                  <img
+                    class="about-group-card-icon"
+                    src="@/assets/img/author/author_web_n.png"
+                    alt="deco_wave"
+                  />
                 </a>
-                <a class="about-group-card-href" :href="`${member.ig}`" target="_blank">
-                  <img class="about-group-card-icon" src="@/assets/img/author/author_ig_n.png" alt="deco_wave">
+                <a
+                  class="about-group-card-href"
+                  :href="`${member.ig}`"
+                  target="_blank"
+                >
+                  <img
+                    class="about-group-card-icon"
+                    src="@/assets/img/author/author_ig_n.png"
+                    alt="deco_wave"
+                  />
                 </a>
               </div>
             </div>
-            <img @click="popupMember(index)" class="about-group-card-pop" src="@/assets/img/regular/view_n.png" alt="deco_wave">
+            <img
+              @click="popupMember(index)"
+              class="about-group-card-pop"
+              src="@/assets/img/regular/view_n.png"
+              alt="deco_wave"
+            />
           </div>
         </div>
-
       </div>
     </div>
 
-    <memberPopup v-if="isPopup" @closePopup="closePopup" :member="currentMember" />
+    <memberPopup
+      v-if="isPopup"
+      @closePopup="closePopup"
+      :member="currentMember"
+    />
 
     <div class="about-thank">
-      <headName class="about-thank-title" :en="'( THANKS )'" :text="'感謝單位'" />
-      <div class="about-thank-line"></div>
+      <headName
+        class="about-thank-headName"
+        :en="'( THANKS )'"
+        :text="'感謝單位'"
+      />
+
       <div class="about-thank-outer">
-        <div v-for="(thank, index) in thankList"
+        <div class="about-thank-line"></div>
+        <div
+          v-for="(thank, index) in thankList"
           :key="`${index}${thank.name}`"
           class="about-thank-box"
         >
@@ -104,124 +208,129 @@
             <div class="about-thank-img"></div>
             <div class="about-thank-text">{{ thank.text }}</div>
           </div>
+          <div class="about-thank-row-line"></div>
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
 <script lang="ts" setup>
-
-const isPopup = ref(false)
-const currentMember = ref({ 
-  photo: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg',
-  pre: '與海有關創辦人',
-  name: '西打藍',
-  en: 'Siddharam',
-  mail: 'https://www.instagram.com/sidd.blue',
-  website: 'https://www.instagram.com/sidd.blue',
-  ig: 'https://www.instagram.com/sidd.blue',
-  des: '2020/2 成為自由工作者，建立西打藍個人品牌，協助客戶建立品牌網站、採訪寫作，同時是「雞籠怪奇」一員。2020 年「雞籠怪奇」在基隆舉辦「怪奇博物館」實境解謎遊戲與戲劇演出；2021 年「雞籠怪奇」舉辦「怪奇逃走中 - 混血探員」實境解謎遊戲。2022 年出版 2 本書：《修煉——全民服務的數位轉型》、《看海記事：基隆港職人生活誌》，2023 年還有一本新書。'
-})
+const isPopup = ref(false);
+const currentMember = ref({
+  photo:
+    "https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg",
+  pre: "與海有關創辦人",
+  name: "西打藍",
+  en: "Siddharam",
+  mail: "https://www.instagram.com/sidd.blue",
+  website: "https://www.instagram.com/sidd.blue",
+  ig: "https://www.instagram.com/sidd.blue",
+  des: "2020/2 成為自由工作者，建立西打藍個人品牌，協助客戶建立品牌網站、採訪寫作，同時是「雞籠怪奇」一員。2020 年「雞籠怪奇」在基隆舉辦「怪奇博物館」實境解謎遊戲與戲劇演出；2021 年「雞籠怪奇」舉辦「怪奇逃走中 - 混血探員」實境解謎遊戲。2022 年出版 2 本書：《修煉——全民服務的數位轉型》、《看海記事：基隆港職人生活誌》，2023 年還有一本新書。",
+});
 
 const memberList = reactive([
-  { 
-    photo: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg',
-    pre: '與海有關創辦人',
-    name: '西打藍',
-    en: 'Siddharam',
-    mail: 'https://www.instagram.com/sidd.blue',
-    website: 'https://www.instagram.com/sidd.blue',
-    ig: 'https://www.instagram.com/sidd.blue',
-    des: '2020/2 成為自由工作者，建立西打藍個人品牌，協助客戶建立品牌網站、採訪寫作，同時是「雞籠怪奇」一員。2020 年「雞籠怪奇」在基隆舉辦「怪奇博物館」實境解謎遊戲與戲劇演出；2021 年「雞籠怪奇」舉辦「怪奇逃走中 - 混血探員」實境解謎遊戲。2022 年出版 2 本書：《修煉——全民服務的數位轉型》、《看海記事：基隆港職人生活誌》，2023 年還有一本新書。'
+  {
+    photo:
+      "https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg",
+    pre: "與海有關創辦人",
+    name: "西打藍",
+    en: "Siddharam",
+    mail: "https://www.instagram.com/sidd.blue",
+    website: "https://www.instagram.com/sidd.blue",
+    ig: "https://www.instagram.com/sidd.blue",
+    des: "2020/2 成為自由工作者，建立西打藍個人品牌，協助客戶建立品牌網站、採訪寫作，同時是「雞籠怪奇」一員。2020 年「雞籠怪奇」在基隆舉辦「怪奇博物館」實境解謎遊戲與戲劇演出；2021 年「雞籠怪奇」舉辦「怪奇逃走中 - 混血探員」實境解謎遊戲。2022 年出版 2 本書：《修煉——全民服務的數位轉型》、《看海記事：基隆港職人生活誌》，2023 年還有一本新書。",
   },
-  { 
-    photo: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg',
-    pre: '與海有關創辦人',
-    name: '西打藍',
-    en: 'Siddharam',
-    mail: 'https://www.instagram.com/sidd.blue',
-    website: 'https://www.instagram.com/sidd.blue',
-    ig: 'https://www.instagram.com/sidd.blue',
-    des: '2020/2 成為自由工作者，建立西打藍個人品牌，協助客戶建立品牌網站、採訪寫作，同時是「雞籠怪奇」一員。2020 年「雞籠怪奇」在基隆舉辦「怪奇博物館」實境解謎遊戲與戲劇演出；2021 年「雞籠怪奇」舉辦「怪奇逃走中 - 混血探員」實境解謎遊戲。2022 年出版 2 本書：《修煉——全民服務的數位轉型》、《看海記事：基隆港職人生活誌》，2023 年還有一本新書。'
+  {
+    photo:
+      "https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg",
+    pre: "與海有關創辦人",
+    name: "西打藍",
+    en: "Siddharam",
+    mail: "https://www.instagram.com/sidd.blue",
+    website: "https://www.instagram.com/sidd.blue",
+    ig: "https://www.instagram.com/sidd.blue",
+    des: "2020/2 成為自由工作者，建立西打藍個人品牌，協助客戶建立品牌網站、採訪寫作，同時是「雞籠怪奇」一員。2020 年「雞籠怪奇」在基隆舉辦「怪奇博物館」實境解謎遊戲與戲劇演出；2021 年「雞籠怪奇」舉辦「怪奇逃走中 - 混血探員」實境解謎遊戲。2022 年出版 2 本書：《修煉——全民服務的數位轉型》、《看海記事：基隆港職人生活誌》，2023 年還有一本新書。",
   },
-  { 
-    photo: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg',
-    pre: '與海有關創辦人',
-    name: '西打藍',
-    en: 'Siddharam',
-    mail: 'https://www.instagram.com/sidd.blue',
-    website: 'https://www.instagram.com/sidd.blue',
-    ig: 'https://www.instagram.com/sidd.blue',
-    des: '2020/2 成為自由工作者，建立西打藍個人品牌，協助客戶建立品牌網站、採訪寫作，同時是「雞籠怪奇」一員。2020 年「雞籠怪奇」在基隆舉辦「怪奇博物館」實境解謎遊戲與戲劇演出；2021 年「雞籠怪奇」舉辦「怪奇逃走中 - 混血探員」實境解謎遊戲。2022 年出版 2 本書：《修煉——全民服務的數位轉型》、《看海記事：基隆港職人生活誌》，2023 年還有一本新書。'
+  {
+    photo:
+      "https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg",
+    pre: "與海有關創辦人",
+    name: "西打藍",
+    en: "Siddharam",
+    mail: "https://www.instagram.com/sidd.blue",
+    website: "https://www.instagram.com/sidd.blue",
+    ig: "https://www.instagram.com/sidd.blue",
+    des: "2020/2 成為自由工作者，建立西打藍個人品牌，協助客戶建立品牌網站、採訪寫作，同時是「雞籠怪奇」一員。2020 年「雞籠怪奇」在基隆舉辦「怪奇博物館」實境解謎遊戲與戲劇演出；2021 年「雞籠怪奇」舉辦「怪奇逃走中 - 混血探員」實境解謎遊戲。2022 年出版 2 本書：《修煉——全民服務的數位轉型》、《看海記事：基隆港職人生活誌》，2023 年還有一本新書。",
   },
-  { 
-    photo: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg',
-    pre: '與海有關創辦人',
-    name: '西打藍',
-    en: 'Siddharam',
-    mail: 'https://www.instagram.com/sidd.blue',
-    website: 'https://www.instagram.com/sidd.blue',
-    ig: 'https://www.instagram.com/sidd.blue',
-    des: '2020/2 成為自由工作者，建立西打藍個人品牌，協助客戶建立品牌網站、採訪寫作，同時是「雞籠怪奇」一員。2020 年「雞籠怪奇」在基隆舉辦「怪奇博物館」實境解謎遊戲與戲劇演出；2021 年「雞籠怪奇」舉辦「怪奇逃走中 - 混血探員」實境解謎遊戲。2022 年出版 2 本書：《修煉——全民服務的數位轉型》、《看海記事：基隆港職人生活誌》，2023 年還有一本新書。'
+  {
+    photo:
+      "https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg",
+    pre: "與海有關創辦人",
+    name: "西打藍",
+    en: "Siddharam",
+    mail: "https://www.instagram.com/sidd.blue",
+    website: "https://www.instagram.com/sidd.blue",
+    ig: "https://www.instagram.com/sidd.blue",
+    des: "2020/2 成為自由工作者，建立西打藍個人品牌，協助客戶建立品牌網站、採訪寫作，同時是「雞籠怪奇」一員。2020 年「雞籠怪奇」在基隆舉辦「怪奇博物館」實境解謎遊戲與戲劇演出；2021 年「雞籠怪奇」舉辦「怪奇逃走中 - 混血探員」實境解謎遊戲。2022 年出版 2 本書：《修煉——全民服務的數位轉型》、《看海記事：基隆港職人生活誌》，2023 年還有一本新書。",
   },
-  { 
-    photo: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg',
-    pre: '與海有關創辦人',
-    name: '西打藍',
-    en: 'Siddharam',
-    mail: 'https://www.instagram.com/sidd.blue',
-    website: 'https://www.instagram.com/sidd.blue',
-    ig: 'https://www.instagram.com/sidd.blue',
-    des: '2020/2 成為自由工作者，建立西打藍個人品牌，協助客戶建立品牌網站、採訪寫作，同時是「雞籠怪奇」一員。2020 年「雞籠怪奇」在基隆舉辦「怪奇博物館」實境解謎遊戲與戲劇演出；2021 年「雞籠怪奇」舉辦「怪奇逃走中 - 混血探員」實境解謎遊戲。2022 年出版 2 本書：《修煉——全民服務的數位轉型》、《看海記事：基隆港職人生活誌》，2023 年還有一本新書。'
+  {
+    photo:
+      "https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg",
+    pre: "與海有關創辦人",
+    name: "西打藍",
+    en: "Siddharam",
+    mail: "https://www.instagram.com/sidd.blue",
+    website: "https://www.instagram.com/sidd.blue",
+    ig: "https://www.instagram.com/sidd.blue",
+    des: "2020/2 成為自由工作者，建立西打藍個人品牌，協助客戶建立品牌網站、採訪寫作，同時是「雞籠怪奇」一員。2020 年「雞籠怪奇」在基隆舉辦「怪奇博物館」實境解謎遊戲與戲劇演出；2021 年「雞籠怪奇」舉辦「怪奇逃走中 - 混血探員」實境解謎遊戲。2022 年出版 2 本書：《修煉——全民服務的數位轉型》、《看海記事：基隆港職人生活誌》，2023 年還有一本新書。",
   },
-])
+]);
 
-currentMember.value = memberList[0]
+currentMember.value = memberList[0];
 
-
-function popupMember(index:any) {
-  console.log(index)
-  isPopup.value = true
-  currentMember.value = memberList[index] 
+function popupMember(index: any) {
+  console.log(index);
+  isPopup.value = true;
+  currentMember.value = memberList[index];
 }
 
-function closePopup(popup:boolean) {
-  isPopup.value = popup
+function closePopup(popup: boolean) {
+  isPopup.value = popup;
 }
 
 const thankList = reactive([
   {
-    photo: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg',
-    name: '陽明海運',
-    text: '基隆市除今年於各區辦理狗。基隆市除。'
+    photo:
+      "https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg",
+    name: "陽明海運",
+    text: "基隆市除今年於各區辦理狗。基隆市除。",
   },
   {
-    photo: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg',
-    name: '陽明海運',
-    text: '基隆市除今年於各區辦理狗。基隆市除。'
+    photo:
+      "https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg",
+    name: "陽明海運",
+    text: "基隆市除今年於各區辦理狗。基隆市除。",
   },
   {
-    photo: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg',
-    name: '',
-    text: '基隆市除今年於各區辦理狗。基隆市除。'
+    photo:
+      "https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg",
+    name: "陽明海運陽明海運陽明海運陽明海運",
+    text: "基隆市除今年於各區辦理狗。基隆市除。",
   },
-])
-
+]);
 </script>
 
 <style lang="scss" scoped>
-
 .about {
   padding-top: 60px;
 
   &-bg {
-    width: 100vw;
+    width: 100%;
     height: calc(100vh - 60px);
     margin-bottom: 100px;
     padding-top: 20vh;
-    background-image: url('../assets/img/scene/scene1.jpg');
+    background-image: url("../assets/img/scene/scene1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -285,7 +394,6 @@ const thankList = reactive([
       font-weight: bold;
       text-align: right;
     }
-
   }
 
   &-row {
@@ -328,7 +436,7 @@ const thankList = reactive([
   &-square {
     width: 478px;
     height: 400px;
-    background-image: url('../assets/img/scene/scene1.jpg');
+    background-image: url("../assets/img/scene/scene1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -340,7 +448,7 @@ const thankList = reactive([
     width: 100%;
     height: 500px;
     margin-top: 100px;
-    background-image: url('../assets/img/scene/scene1.jpg');
+    background-image: url("../assets/img/scene/scene1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -394,7 +502,7 @@ const thankList = reactive([
         width: 352px;
         height: 320px;
         border-radius: 16px;
-        background-image: url('../assets/img/scene/scene1.jpg');
+        background-image: url("../assets/img/scene/scene1.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position-x: center;
@@ -407,7 +515,7 @@ const thankList = reactive([
         justify-content: space-between;
       }
 
-      &-pre {  
+      &-pre {
         font-size: 14px;
         color: #7ca1b5;
       }
@@ -450,17 +558,15 @@ const thankList = reactive([
         height: 36px;
         cursor: pointer;
       }
-      
     }
-    
   }
 
   &-thank {
     max-width: 1088px;
     margin: 0px auto 172px;
 
-    &-title {
-
+    &-headName {
+      margin-bottom: 60px;
     }
 
     &-line {
@@ -472,8 +578,7 @@ const thankList = reactive([
     &-outer {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
-    }
+      justify-content: flex-start;    }
 
     &-box {
       width: 485px;
@@ -483,6 +588,10 @@ const thankList = reactive([
     &-title {
       font-size: 18px;
       color: #7ca1b5;
+    }
+
+    &-title:deep(.head-name-title) {
+      color: #000;
     }
 
     &-row {
@@ -501,18 +610,205 @@ const thankList = reactive([
       width: 232px;
       margin: 24px 0px 0px 24px;
     }
-    
   }
-  
 }
+.mobile {
+  display: none !important;
+}
+@media screen and (max-width: 1200px) {
+  .about-bg {
+    display: none;
+  }
+  .about-group-row {
+    display: none;
+  }
+  .mobile {
+    display: block !important;
+  }
+  .mobile-about-bg {
+    display: block;
+    height: calc(100vh - 60px);
+    background-image: url("../assets/img/scene/scene1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    padding: 92px 30px 0 30px;
+    margin-bottom: 100px;
+    .vision {
+      font-family: Lato;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1.4px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .title {
+      font-family: NotoSansCJKtc;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1.4px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .img {
+      width: 60px;
+      height: 4px;
+      margin-bottom: 46px;
+    }
+    .text {
+      font-family: NotoSansCJKtc;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.88;
+      letter-spacing: 1.6px;
+      text-align: left;
+      color: #fff;
+    }
+    .read {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 42px;
+      .down {
+        width: 36px;
+        height: 36px;
+      }
+      .keepread {
+        font-size: 16px;
+        margin-left: 12px;
+        letter-spacing: 1.6px;
+        text-align: left;
+        color: #fff;
+      }
+    }
+  }
 
-@media( max-width: 1023px ){
+  .about-row2 {
+    flex-direction: column-reverse !important;
+    margin-top: 100px;
+    .about-box-reverse {
+      margin: 0;
+    }
+  }
+  .about {
+    &-row {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 0 30px;
+      align-items: center;
+    }
+    &-box {
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+    }
+    &-wave {
+      width: 90px;
+      height: 6px;
+      margin-bottom: 24px;
+    }
+    &-title {
+      width: 60%;
+      font-family: NotoSansCJKtc;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.56;
+      letter-spacing: 0.9px;
+      text-align: left;
+      color: #000;
+      margin-bottom: 30px;
+    }
+    &-text {
+      width: 100%;
+      font-family: NotoSansCJKtc;
+      font-size: 16px;
+      line-height: 1.88;
+      letter-spacing: 1.6px;
+      text-align: left;
+      color: #000;
+      margin-bottom: 42px;
+    }
+    &-square {
+      width: 330px;
+      height: 222px;
+    }
+    &-group-row {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
 
-.index {
+  .mobile-about-group-row {
+    .headName {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+    .content {
+      width: 100%;
+      padding: 0 30px;
+      font-family: NotoSansCJKtc;
+      font-size: 17px;
+      line-height: 1.76;
+      letter-spacing: 1.7px;
+      text-align: left;
+      color: #000;
+    }
+  }
 
+  .about-group-card-outer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    .about-group-card:last-child:nth-child(3n-1) {
+      margin-right: 0;
+    }
+  }
 
+  .about-thank {
+    .about-thank-line {
+      width: 100%;
+      margin: 51px 30px 16px 30px;
+    }
+
+    .about-thank-box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      .about-thank-title {
+        font-family: NotoSansCJKtc;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.88;
+        letter-spacing: 1.6px;
+        text-align: left;
+        padding: 0 48px;
+      }
+      .about-thank-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0 48px;
+        .about-thank-img {
+          width: 294px;
+          height: 140px;
+        }
+        .about-thank-text {
+          width: 100%;
+        }
+      }
+      .about-thank-row-line {
+        margin: 0 30px;
+        height: 1px;
+        background-color: #8db3c8;
+        margin-top: 16px;
+      }
+    }
+  }
 
 }
-}
-
 </style>

@@ -11,12 +11,28 @@
         <div class="article-info-text">永晝海濱美術館｜基隆正濱漁港</div>
       </div>
       <div class="article-info-row">
-        <div class="article-info-title">全稱</div>
-        <div class="article-info-text">永晝海濱美術館｜基隆正濱漁港</div>
+        <div class="article-info-title">地址</div>
+        <div class="article-info-text">基隆市中正區中正路 539 號</div>
       </div>
       <div class="article-info-row">
-        <div class="article-info-title">全稱</div>
-        <div class="article-info-text">永晝海濱美術館｜基隆正濱漁港</div>
+        <div class="article-info-title">營業</div>
+        <div class="article-info-text">平日：13:00–18:00<br>（週二公休）</div>
+      </div>
+      <div class="article-info-row">
+        <div class="article-info-title">聯絡</div>
+        <div class="article-info-text">02 2428 1159</div>
+      </div>
+      <div class="article-info-row">
+        <div class="article-info-title">撰寫</div>
+        <div class="article-info-text">西打藍</div>
+      </div>
+      <div class="article-info-row">
+        <div class="article-info-title">撰寫</div>
+        <div class="article-info-text">西打藍</div>
+      </div>
+      <div class="article-info-row">
+        <div class="article-info-title">發布</div>
+        <div class="article-info-text">2023-01-16</div>
       </div>
     </div>
     <div class="article-info-line"></div>
@@ -86,12 +102,35 @@ const props = defineProps(['en'])
     
 }
 
-@media( max-width: 1023px ){
-
-.article {
-
-}
-
+@media screen and (max-width: 1200px){
+  .article {
+    &-info {
+      max-width: 100vw;
+      margin: 50px 0 0 0px;
+      padding: 0px 20px;
+      &-line-short {
+        width: 34%;
+      }
+      &-head-box {
+        justify-content: center;
+      }
+      &-head {
+        font-size: 20px;
+        letter-spacing: 2px;
+      }
+      &-box {
+        flex-direction: column;
+        padding-left: 16px;
+      }
+      &-title {
+        margin-right: 16px;
+        white-space: nowrap;
+      }
+      &-text {
+        white-space: nowrap;
+      }
+    }
+  }
 }
 
 </style>
