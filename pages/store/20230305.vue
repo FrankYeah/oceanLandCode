@@ -1,21 +1,23 @@
 <template>
   <articleOuter>
     <articlePre />
-    <articleInfo />
+   
   
     <articleMain>
+      <articleInfo />
       <articleH1 />
-      <articleText />
-      <articleCard />
-      <articleImg />
       <articleH2 />
       <articleH3 />
+      <articleH4 />
       <articleDeco />
+      <articleImg />
+      <articleContent1 />
+      <articleMobileFix/>
     </articleMain>
 
     <articleAuthor />
     <articleDeco2 />
-    <articleRecommend :list="storeList" />
+    <articleRecommend :list="list"/> 
     <articleFix />
 
   </articleOuter>
@@ -75,7 +77,61 @@ const storeList = reactive([
     time: `平日：11:00–20:00<br>假日：11:00–22:00`
   },
 ])
-
+const tourList = reactive([
+  { 
+    name: '見書店',
+    url: '20230305',
+    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
+    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
+    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
+  },
+  { 
+    name: '見書店',
+    url: '20230305',
+    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
+    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
+    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
+  },
+  { 
+    name: '見書店',
+    url: '20230305',
+    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
+    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
+    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
+  },
+  { 
+    name: '見書店',
+    url: '20230305',
+    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
+    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
+    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
+  },
+  { 
+    name: '見書店',
+    url: '20230305',
+    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
+    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
+    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
+  },
+  { 
+    name: '見書店',
+    url: '20230305',
+    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
+    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
+    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
+  },
+  { 
+    name: '見書店',
+    url: '20230305',
+    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
+    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
+    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
+  },
+])
+const list = {
+  storeList:storeList,
+  tourList:tourList
+}
 </script>
 
 <style lang="scss" scoped>

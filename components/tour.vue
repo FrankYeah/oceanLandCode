@@ -1,6 +1,7 @@
 <template>
-  <nuxt-link :to="`/tour/${props.tour.url}`" class="tour">
-    <div :style="`background-image: url('${props.tour.bg}')`"
+  <nuxt-link :to="`/tour/${props.tour.url}`" >
+    <div class="tour">
+      <div :style="`background-image: url('${props.tour.bg}')`"
       class="tour-bg"
     >
       <div class="tour-title">{{ props.tour.name }}</div>
@@ -17,6 +18,8 @@
       </div>
       <img class="tour-collect-icon" src="@/assets/img/regular/like_n.png" alt="like_n">
     </div>
+    </div>
+   
   </nuxt-link>
 </template>
 
@@ -29,12 +32,11 @@ const props = defineProps(['tour'])
 <style lang="scss" scoped>
 
 .tour {
-  width: 384px;
-  border-radius: 16px;
-  background-color: white;
-  
+  width: 280px;
+    
   &-bg {
-    height: 240px;
+    border-radius: 14px 14px 0px 0px;
+    height: 173px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -77,10 +79,13 @@ const props = defineProps(['tour'])
     justify-content: space-between;
     align-items: center;
     padding: 23px 24px;
+    border-radius: 0px 0px 14px 14px ;
+    background-color: #fff;
     
     &-box {
       display: flex;
       align-items: center;
+      
     }
     
     &-person {
@@ -104,13 +109,14 @@ const props = defineProps(['tour'])
 
 }
 
-@media( max-width: 1023px ){
-
-.tour-list {
-  
-
-}
-
+@media screen and (max-width: 1200px){
+  .tour {
+    width: 294px;
+    &-bg {
+      height: 160px;
+      border-radius: 10px 10px 0px 0px;
+    }
+  }
 }
 
 </style>

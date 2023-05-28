@@ -161,13 +161,31 @@
     font-size: 18px;
     font-weight: bold;
   }
+
 }
 
-@media( max-width: 1023px ){
+@media screen and (max-width: 1200px){
 
 .footer {
-  
-
+  height: 130px;
+  padding: 0px;
+  width: 100vw;
+  &-right {
+    display: none;
+  }
+  &-left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &-logo {
+    font-size: 18px;
+    margin-top: 32px;
+  }
+  &-copyright {
+    font-size: 14px;
+  }
 }
 
 }

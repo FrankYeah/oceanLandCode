@@ -185,12 +185,49 @@ const props = defineProps(['en'])
     
 }
 
-@media( max-width: 1023px ){
-
-.know-more {
-
+@media screen and (max-width: 1200px){
+  .article {
+    &-pre {
+      max-width: 100vw;
+      flex-direction: column;
+      padding: 80px 20px;
+      &-left {
+        width: 100%;
+      }
+      &-en {
+        font-size: 14px;
+        line-height: 1.71;
+      }
+      &-title {
+        line-height: 1.5;
+        font-size: 28px;
+      }
+      &-wave {
+        top: 60px;
+        left: -35px;
+        width: 85px;
+        height: 5px;
+      }
+      &-text {
+        letter-spacing: 1.6px;
+        font-size: 16px;
+        margin-top: 19px;
+      }
+      &-column {
+        margin-left: 30px;
+      }
+      &-des {
+        font-size: 16px;
+        line-height: 1.88;
+        margin-right: 20px;
+      }
+      &-bg {
+        bottom: 980px;
+      }
+      &-right {
+        display: none;
+      }
+    }
+  }
 }
-
-}
-
 </style>

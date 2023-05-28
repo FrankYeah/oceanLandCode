@@ -14,13 +14,14 @@ const props = defineProps(['en'])
 
 .article {
   padding-bottom: 100px;
+
+  background-color: #f6f9fc;
 }
 
-@media( max-width: 1023px ){
-
-.know-more {
-
-}
+@media screen and (max-width: 1200px){
+  .article {
+    overflow: hidden;
+  }
 
 }
 

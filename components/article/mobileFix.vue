@@ -21,39 +21,41 @@ const props = defineProps(['en'])
 </script>
 
 <style lang="scss" scoped>
+.article-fix {
+  display: none;
+}
 
-.article {
 
-  &-fix {
-    position: fixed;
-    top: 30vh;
-    right: 48px;
+@media screen and (max-width: 1200px) {
+  .article {
 
-    &-href {
-      margin-bottom: 16px;
-      cursor: pointer;
-    }
+    &-fix {
+      margin-top: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 78px;
 
-    &-icon {
-      margin-bottom: 16px;
-      cursor: pointer;
-    }
+      &-href {
+        margin-right: 8px;
+        cursor: pointer;
+      }
 
-    &-line {
-      width: 42px;
-      height: 1px;
-      margin-bottom: 16px;
-      background-color: #7ca1b5;
+      &-icon {
+        cursor: pointer;
+      }
+
+      &-line {
+        margin-right: 8px;
+        width: 42px;
+        height: 1px;
+        background-color: #7ca1b5;
+        transform: rotate(90deg);
+      }
+
     }
 
   }
-    
 }
-
-@media screen and (max-width: 1200px){
-  .article-fix{
-    display: none;
-  }
-}
-
 </style>

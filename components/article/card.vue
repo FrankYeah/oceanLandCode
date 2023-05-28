@@ -1,7 +1,9 @@
 <template>
-  <div class="article-card">
-    <div class="article-card-text">透過藝術、教育以及地方故事整合，沿著海港構築一座地域型的無牆美術館</div>
-    <div class="article-card-name">—— Jhane</div>
+  <div class="article">
+    <div class="article-card">
+      <div class="article-card-text">透過藝術、教育以及地方故事整合，沿著海港構築一座地域型的無牆美術館</div>
+      <div class="article-card-name">—— Jhane</div>
+    </div>
   </div>
 </template>
 
@@ -12,7 +14,6 @@ const props = defineProps(['en'])
 </script>
 
 <style lang="scss" scoped>
-
 .article {
 
   &-card {
@@ -33,15 +34,33 @@ const props = defineProps(['en'])
     }
 
   }
-    
-}
-
-@media( max-width: 1023px ){
-
-.know-more {
 
 }
 
-}
+@media screen and (max-width: 1200px) {
+  .article {
 
+    &-card {
+      width: auto;
+      margin: 0;
+
+      &-text {
+        font-family: NotoSansCJKtc;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1.6px;
+        margin-bottom: 12px;
+      }
+
+      &-name {
+        margin-top: 0px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+    }
+
+  }
+
+}
 </style>

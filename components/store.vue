@@ -27,11 +27,11 @@
     <!-- popup -->
     
     <div v-if="isPopup"
-      @click="isPopup = false"
+      @click="close"
       class="store-popup"
     >
       <div @click.stop class="store-popup-box">
-        <img @click="isPopup = false"
+        <img @click="close"
          class="store-popup-close"
           src="@/assets/img/regular/close_n.png"
           alt="close"
@@ -69,17 +69,17 @@
             <div>
               <div class="store-popup-grey">
                 <div class="store-popup-grey-row">
-                  <img class="store-popup-grey-icon" src="@/assets/img/regular/like_n.png" alt="like">
+                  <img class="store-popup-grey-icon" src="@/assets/img/info/address.png" alt="like">
                   <div class="store-popup-grey-text">{{ props.store.location }}</div>
                 </div>
                 <div class="store-popup-grey-line"></div>
                 <div class="store-popup-grey-row">
-                  <img class="store-popup-grey-icon" src="@/assets/img/regular/like_n.png" alt="like">
+                  <img class="store-popup-grey-icon" src="@/assets/img/info/phone.png" alt="like">
                   <div class="store-popup-grey-text">{{ props.store.tel }}</div>
                 </div>
                 <div class="store-popup-grey-line"></div>
                 <div class="store-popup-grey-row">
-                  <img class="store-popup-grey-icon" src="@/assets/img/regular/like_n.png" alt="like">
+                  <img class="store-popup-grey-icon" src="@/assets/img/info/time.png" alt="like">
                   <div class="store-popup-grey-text" v-html="props.store.time"></div>
                 </div>
               </div>
@@ -97,12 +97,16 @@
 const props = defineProps(['store'])
 let isPopup = ref(false)
 
+const close = () => {
+  isPopup.value = false
+}
+
 </script>
 
 <style lang="scss" scoped>
 
 .store {
-
+  
   &-box {
     width: 384px;
     cursor: pointer;
@@ -111,7 +115,7 @@ let isPopup = ref(false)
   &-bg {
     height: 240px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: flex-end;
     padding: 16px;
     background-repeat: no-repeat;
@@ -123,6 +127,12 @@ let isPopup = ref(false)
 
   &-bg-row {
     display: flex;
+    overflow: auto;
+  }
+
+  &-bg-row::-webkit-scrollbar {
+    width: 0;
+    height: 0;
   }
 
   &-bg-btn {
@@ -175,11 +185,13 @@ let isPopup = ref(false)
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 200;
 
     &-box {
       position: relative;
       width: 674px;
       border-radius: 16px;
+      overflow: auto;
     }
 
     &-close {
@@ -196,6 +208,7 @@ let isPopup = ref(false)
       display: flex;
       justify-content: center;
       align-items: flex-end;
+      border-radius: 16px 16px 0 0;
     }
 
     &-dot-box {
@@ -219,6 +232,7 @@ let isPopup = ref(false)
     &-down {
       padding: 30px 36px;
       background-color: white;
+      border-radius:  0 0 16px 16px;
     }
 
     &-row {
@@ -248,6 +262,7 @@ let isPopup = ref(false)
 
     &-tag-box {
       display: flex;
+      flex-wrap: wrap;
       margin-top: 18px;
     }
 
@@ -292,10 +307,70 @@ let isPopup = ref(false)
   
 }
 
-@media( max-width: 1023px ){
+@media screen and (max-width: 1200px){
 
 .store {
-  
+  &-box {
+    width: 330px;
+    cursor: pointer;
+  }
+
+  &-bg {
+    height: 160px;
+  }
+  &-row {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+  }
+  &-name {
+    font-size: 18px;
+    letter-spacing: 0.9px;
+  }
+  &-text {
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    margin-top: 8px;
+  }
+
+  &-popup {
+    &-box {
+      width: 90vw;
+      height: 90vh;
+      border-radius: 16px;
+    }
+    &-bg {
+      height: 180px;
+    }
+    &-row-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 12px;
+    }
+    &-name {
+      line-height: 1.5;
+      font-size: 20px;
+    }
+    &-text {
+      letter-spacing: 1.5px;
+      font-size: 15px;
+    }
+    &-btn {
+      margin: 10px 0px 20px 0;
+    }
+    &-down {
+      padding: 20px 22px;
+
+    }
+
+    &-grey {
+      width: 100%;
+      margin: 0;
+      padding: 14px 20px;
+    }
+  }
+
 
 }
 

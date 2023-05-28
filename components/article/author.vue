@@ -29,6 +29,32 @@
         </div>
       </div>
     </div>
+    <div class="mobile-box">
+      <div class="title-box">
+        <div class="author-box">
+          <div class="logo"></div>
+        </div>
+        <div class="title-text-box">
+          <div class="title1">特約作者</div>
+          <div class="title2">西打藍</div>
+        </div>
+      </div>
+      <div class="content">我喜歡寫字，工作前三年，我在雜誌、報社、網路媒體擔任文字記者，跑過移民工、人文、科技線。</div>
+      <div class="btn-box">
+        <a class="icon-href" :href="``">
+          <img class="icon" src="@/assets/img/author/author_email_n.png" alt="deco_wave">
+        </a>
+        <a class="icon-href" :href="``" target="_blank">
+          <img class="icon" src="@/assets/img/author/author_web_n.png" alt="deco_wave">
+        </a>
+        <a class="icon-href" :href="``" target="_blank">
+          <img class="icon" src="@/assets/img/author/author_ig_n.png" alt="deco_wave">
+        </a>
+        <a class="icon-href" :href="``" target="_blank">
+          <img class="icon" src="@/assets/img/author/author_fb_n.png" alt="deco_wave">
+        </a>
+      </div>
+    </div>
     <div class="article-author-line"></div>
   </div>
 </template>
@@ -40,9 +66,8 @@ const props = defineProps(['en'])
 </script>
 
 <style lang="scss" scoped>
-
 .article {
-    
+
   &-author {
     max-width: 812px;
     margin: 106px auto 0px;
@@ -127,13 +152,79 @@ const props = defineProps(['en'])
   }
 
 }
+.mobile-box {
+  display: none;
+}
+@media screen and (max-width: 1200px) {
+  .article {
+    &-author {
+      max-width: 330px;
+      margin: auto;
 
-@media( max-width: 1023px ){
+      &-box {
+        display: none;
+      }
 
-.know-more {
+      .mobile-box {
+        padding: 18px 16px 30px 16px;
+        display: block;
+
+        .title-box {
+          display: flex;
+          align-items: center;
+          margin-bottom: 16px;
+
+          .author-box {
+            width: 84px;
+            height: 84px;
+            border-radius: 50%;
+            background-color: #70b3ee;
+            margin-right: 16px;
+          }
+
+          .title-text-box {
+            .title1 {
+              font-size: 14px;
+              font-weight: 500;
+              letter-spacing: 1.4px;
+              color: #7ca1b5;
+            }
+
+            .title2 {
+              font-size: 20px;
+              font-weight: bold;
+              letter-spacing: 1px;
+            }
+          }
+        }
+
+
+
+        .content {
+          font-size: 15px;
+          letter-spacing: 1.5px;
+          margin-bottom: 36px;
+        }
+
+        .btn-box {
+          display: flex;
+
+          .icon-href {
+            margin-right: 12px;
+            width: 36px;
+            height: 36px;
+            overflow: hidden;
+
+            .icon {
+              width: 36px;
+              height: 36px;
+            }
+          }
+        }
+      }
+
+    }
+  }
 
 }
-
-}
-
 </style>
