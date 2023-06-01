@@ -805,6 +805,8 @@ const tourList = reactive([
     &-swiper-slide{
       width: 100vw;
       padding: 0 30px;
+      display: flex;
+      justify-content: center;
     }
   }
 
