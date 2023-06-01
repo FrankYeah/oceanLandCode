@@ -3,36 +3,27 @@
     <div class="search-text-box">
       <headName :en="'( SEARCH )'" :text="'搜尋'" />
       <div class="search-tag-box">
-        <div v-for="(tag, index) in tags"
-          :key="`${index}${tag}`"
-          class="search-tag"
-        >#{{ tag }}</div>
+        <div v-for="(tag, index) in tags" :key="`${index}${tag}`" class="search-tag">#{{ tag }}</div>
       </div>
     </div>
     <div class="search-search-box">
-      <el-input class="search-search"
-        v-model="searchText"
-        maxlength="30"
-        placeholder="海邊"
-      ></el-input>
-      <img class="search-icon" src="@/assets/img/navigation/search_n.png" alt="logo">
+      <div class="el-input-box">
+        <el-input class="search-search" v-model="searchText" maxlength="30" placeholder="海邊"></el-input>
+        <img class="search-icon" src="@/assets/img/navigation/search_n.png" alt="logo">
+      </div>
     </div>
-    <div class="search-text">"{{ searchText }}"，搜尋出 <span style="color: #7ca1b5;">7</span> 篇店家及 <span style="color: #7ca1b5;">3</span> 篇遊程</div>
+    <div class="search-text">"{{ searchText }}"，搜尋出 <span style="color: #7ca1b5;">7</span> 篇店家及 <span
+        style="color: #7ca1b5;">3</span> 篇遊程</div>
     <div class="search-banner">
-      <div v-for="(n) in 120" :key="n"
-       class="search-dot"
-      ></div>
+      <div v-for="(n) in innerWidth>1200? 120: 40" :key="n" class="search-dot"></div>
     </div>
 
     <div class="search-store">
       <div class="search-store-head">店家</div>
       <img class="search-store-img" src="@/assets/img/other/deco_wave.png" alt="logo">
       <div class="search-store-box">
-        <store v-for="(store, index) in storeList"
-          :key="`${index}${store.name}`"
-          :store="store"
-          class="search-store-item"
-        />
+        <store v-for="(store, index) in storeList" :key="`${index}${store.name}`" :store="store"
+          class="search-store-item" />
       </div>
     </div>
 
@@ -40,18 +31,20 @@
       <div class="search-store-head">遊程</div>
       <img class="search-store-img" src="@/assets/img/other/deco_wave.png" alt="logo">
       <div class="search-store-box">
-        <tour v-for="(tour, index) in tourList"
-          :key="`${index}${tour.name}`"
-          :tour="tour"
-          class="search-store-item"
-        />
+        <tour v-for="(tour, index) in tourList" :key="`${index}${tour.name}`" :tour="tour" class="search-store-item" />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-
+const innerWidth = ref(0)
+onMounted(() => {
+  
+  window.addEventListener('resize', () => {
+    innerWidth.value = window.innerWidth
+  });
+})
 const searchText = ref('')
 
 const tags = reactive([
@@ -67,7 +60,7 @@ const tags = reactive([
 ])
 
 const storeList = reactive([
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
@@ -77,7 +70,7 @@ const storeList = reactive([
     tel: '02 2428 1159',
     time: `平日：11:00–20:00<br>假日：11:00–22:00`
   },
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
@@ -87,7 +80,7 @@ const storeList = reactive([
     tel: '02 2428 1159',
     time: `平日：11:00–20:00<br>假日：11:00–22:00`
   },
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
@@ -97,7 +90,7 @@ const storeList = reactive([
     tel: '02 2428 1159',
     time: `平日：11:00–20:00<br>假日：11:00–22:00`
   },
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
@@ -107,7 +100,7 @@ const storeList = reactive([
     tel: '02 2428 1159',
     time: `平日：11:00–20:00<br>假日：11:00–22:00`
   },
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
@@ -120,49 +113,49 @@ const storeList = reactive([
 ])
 
 const tourList = reactive([
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
     bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
     writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
   },
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
     bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
     writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
   },
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
     bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
     writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
   },
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
     bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
     writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
   },
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
     bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
     writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
   },
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
     bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
     writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
   },
-  { 
+  {
     name: '見書店',
     url: '20230305',
     des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
@@ -174,7 +167,6 @@ const tourList = reactive([
 </script>
 
 <style lang="scss" scoped>
-
 .search {
   padding: 0px 0px 164px;
   background-color: #f6f9fc;
@@ -203,10 +195,14 @@ const tourList = reactive([
   }
 
   &-search-box {
-    position: relative;
+
     display: flex;
     justify-content: center;
     margin-top: 20px;
+
+    .el-input-box {
+      position: relative;
+    }
   }
 
   &-search {
@@ -271,18 +267,52 @@ const tourList = reactive([
         margin-right: 408px;
       }
     }
-    
+
   }
-  
-}
-
-@media( max-width: 1023px ){
-
-.search {
-
-
 
 }
-}
 
+@media screen and (max-width: 1200px) {
+  .search-text-box {
+    width: 100%;
+    padding-bottom: 16px;
+
+    .search-tag-box {
+      width: 100%;
+    }
+  }
+
+ 
+ 
+
+  .search-search-box {
+    width: 100%;
+
+    .search-search {
+      width: 330px;
+    }
+
+    .search-icon {
+      right: 79%;
+    }
+
+  }
+
+  .search-store {
+    width: 100%;
+
+    .search-store-box {
+
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .search-store-item:last-child:nth-child(3n-1) {
+      margin-right: 0px;
+    }
+  }
+
+
+}
 </style>

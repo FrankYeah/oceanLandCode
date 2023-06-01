@@ -98,12 +98,12 @@
                   </nuxt-link>
                   <div>
                     <div class="header-modal-item-function">
-                      <nuxt-link class="header-modal-item-href" style="margin-right: 24px;" to="/">
+                      <nuxt-link class="header-modal-item-href" @click="closeModal" style="margin-right: 24px;" to="/collect">
                         <div class="header-modal-item-row">
                           <img class="header-modal-item-icon" src="@/assets/img/footer/like.png" alt="logo">
                         </div>
                       </nuxt-link>
-                      <nuxt-link class="header-modal-item-href" to="/">
+                      <nuxt-link class="header-modal-item-href" @click="closeModal" to="/search">
                         <div class="header-modal-item-row">
                           <img class="header-modal-item-icon" src="@/assets/img/footer/search.png" alt="logo">
                         </div>

@@ -5,7 +5,7 @@
       <div class="collect-text">已收藏 <span style="color: #7ca1b5;">7</span> 篇店家及 <span style="color: #7ca1b5;">3</span> 篇遊程</div>
     </div>
     <div class="collect-banner">
-      <div v-for="(n) in 120" :key="n"
+      <div v-for="(n) in innerWidth>1200? 120: 40" :key="n"
        class="collect-dot"
       ></div>
     </div>
@@ -37,7 +37,13 @@
 </template>
 
 <script lang="ts" setup>
-
+const innerWidth = ref(0)
+onMounted(() => {
+  
+  window.addEventListener('resize', () => {
+    innerWidth.value = window.innerWidth
+  });
+})
 const storeList = reactive([
   { 
     name: '見書店',
@@ -211,13 +217,23 @@ const tourList = reactive([
   
 }
 
-@media( max-width: 1023px ){
-
-.collect {
+@media screen and (max-width: 1200px){
 
 
+  .collect-store {
+    width: 100%;
 
-}
+    .collect-store-box {
+
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .collect-store-item:last-child:nth-child(3n-1) {
+      margin-right: 0px;
+    }
+  }
 }
 
 </style>
