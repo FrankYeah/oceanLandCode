@@ -6,10 +6,10 @@
         class="member-popup-photo"
       >
         <div class="member-popup-title-box">
-          <div class="member-popup-title">{{ props.member.name }}</div>
-          <div class="member-popup-en">{{ props.member.en }}</div>
+          <h2 class="member-popup-title">{{ props.member.name }}</h2>
+          <h2 class="member-popup-en">{{ props.member.en }}</h2>
         </div>
-        <div class="member-popup-des">{{ props.member.pre }}</div>
+        <h3 class="member-popup-des">{{ props.member.pre }}</h3>
       </div>
       <div class="member-popup-main">
         <img
@@ -19,7 +19,7 @@
           alt="deco_wave"
         />
         <div class="member-popup-head">介紹</div>
-        <div class="member-popup-text">{{ props.member.des }}</div>
+        <h3 class="member-popup-text">{{ props.member.des }}</h3>
         <div class="member-popup-social">
           <a
             class="member-popup-social-href"
@@ -63,10 +63,10 @@
         :style="`background-image: url('${props.member.photo}')`"
       >
         <div class="title-box">
-          <div class="title">{{ props.member.name }}</div>
-          <div class="en">{{ props.member.en }}</div>
+          <h2 class="title">{{ props.member.name }}</h2>
+          <h2 class="en">{{ props.member.en }}</h2>
         </div>
-        <div class="des">{{ props.member.pre }}</div>
+        <h3 class="des">{{ props.member.pre }}</h3>
         <img
           @click="closePopup"
           class="close"
@@ -75,8 +75,8 @@
         />
       </div>
       <div class="content-box">
-        <div class="head">介紹</div>
-        <div class="text">{{ props.member.des }}</div>
+        <h2 class="head">介紹</h2>
+        <h3 class="text">{{ props.member.des }}</h3>
         <div class="social">
           <a class="social-href" :href="`${props.member.mail}`" target="_blank">
             <img

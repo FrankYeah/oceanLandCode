@@ -1,7 +1,7 @@
 <template>
   <div class="store">
     <div @click="isPopup = true" class="store-box">
-      <div :style="`background-image: url('${props.store.bg[1]}')`" class="store-bg">
+      <div :style="`background-image: url('${props.store.coverImage}')`" class="store-bg">
         <div class="store-bg-row">
           <btnType v-for="(tag, index) in props.store.tag" :key="`${index}${tag}`" :text="tag" :type="'white'"
             class="store-bg-btn" />
@@ -9,13 +9,13 @@
       </div>
       <div class="store-inner">
         <div class="store-row">
-          <div class="store-name">{{ props.store.name }}</div>
+          <h2 class="store-name">{{ props.store.title }}</h2>
           <div class="store-share">
             <img class="store-share-img" src="@/assets/img/regular/view_n.png" alt="view_n">
             <img class="store-share-collect" src="@/assets/img/regular/like_n.png" alt="like_n">
           </div>
         </div>
-        <div class="store-text">{{ props.store.des }}</div>
+        <h3 class="store-text">{{ props.store.des }}</h3>
       </div>
     </div>
 
@@ -24,11 +24,11 @@
     <div v-if="isPopup" @click="close" class="store-popup">
       <div @click.stop class="store-popup-box">
         <img @click="close" class="store-popup-close" src="@/assets/img/regular/close_n.png" alt="close">
-        <!-- <div  :style="`background-image: url('${props.store.bg[1]}')`"
+        <!-- <div  :style="`background-image: url('${props.store.store.bg[1]}')`"
           class="store-popup-bg"
         >
           <div class="store-popup-dot-box">
-            <div v-for="(bg, index) in props.store.bg"
+            <div v-for="(bg, index) in props.store.store.bg"
               :key="`${index}${bg}`"
               class="store-popup-dot"
             ></div>
@@ -39,28 +39,22 @@
             color: #fff;
             background: #fff;
           }`]' :pagination="{ clickable: true }">
-          <swiper-slide :style="`background-image: url('${props.store.bg[1]}')`">
-            <div class="store-popup-dot-box"></div>
-          </swiper-slide>
-          <swiper-slide :style="`background-image: url('${props.store.bg[1]}')`">
-            <div class="store-popup-dot-box"></div>
-          </swiper-slide>
-          <swiper-slide :style="`background-image: url('${props.store.bg[1]}')`">
+          <swiper-slide style="width:100%;height: 100%;" :style="`background-image: url(${props.store.coverImage})`">
             <div class="store-popup-dot-box"></div>
           </swiper-slide>
 
         </swiper-container>
         <div class="store-popup-down">
           <div class="store-popup-row">
-            <div class="store-popup-name">{{ props.store.name }}</div>
+            <h2 class="store-popup-name">{{ props.store.title }}</h2>
             <img class="store-popup-collect" src="@/assets/img/regular/like_n.png" alt="like">
           </div>
           <div class="store-popup-row-box">
             <div>
-              <div class="store-popup-text">{{ props.store.des }}</div>
+              <h3 class="store-popup-text">{{ props.store.des }}</h3>
               <div class="store-popup-tag-box">
-                <btnType v-for="(tag, index) in props.store.tag" :key="`${index}${tag}`" class="store-popup-tag"
-                  :text="tag" :type="'sblue'" />
+                <btnType v-for="(tag, index) in props.store.tag" :key="`${index}${tag}`" class="store-popup-tag" :text="tag"
+                  :type="'sblue'" />
               </div>
               <nuxt-link class="store-share-link" :to="`/store/${props.store.url}`">
                 <btnType class="store-popup-btn" :text="'詳細介紹'" :type="'light'" />
@@ -70,17 +64,17 @@
               <div class="store-popup-grey">
                 <div class="store-popup-grey-row">
                   <img class="store-popup-grey-icon" src="@/assets/img/info/address.png" alt="like">
-                  <div class="store-popup-grey-text">{{ props.store.location }}</div>
+                  <h3 class="store-popup-grey-text">{{ props.store.location }}</h3>
                 </div>
                 <div class="store-popup-grey-line"></div>
                 <div class="store-popup-grey-row">
                   <img class="store-popup-grey-icon" src="@/assets/img/info/phone.png" alt="like">
-                  <div class="store-popup-grey-text">{{ props.store.tel }}</div>
+                  <h3 class="store-popup-grey-text">{{ props.store.phone }}</h3>
                 </div>
                 <div class="store-popup-grey-line"></div>
                 <div class="store-popup-grey-row">
                   <img class="store-popup-grey-icon" src="@/assets/img/info/time.png" alt="like">
-                  <div class="store-popup-grey-text" v-html="props.store.time"></div>
+                  <h3 class="store-popup-grey-text" v-html="props.store.businessHours"></h3>
                 </div>
               </div>
             </div>
@@ -93,48 +87,13 @@
 </template>
 
 <script setup>
+const props = defineProps({ store: { type: Object } })
 
-const props = defineProps(['store'])
-console.log("props", props)
 let isPopup = ref(false)
 
 const close = () => {
   isPopup.value = false
 }
-onMounted(() => {
-
-  // const swiperEl = document.querySelector(".swipercontainer");
-  // console.log(swiperEl)
-  // const params = {
-  //     injectStyles: [`
-  //     .swiper-pagination-bullet {
-  //       width: 20px;
-  //       height: 20px;
-  //       text-align: center;
-  //       line-height: 20px;
-  //       font-size: 12px;
-  //       color: #000;
-  //       opacity: 1;
-  //       background: rgba(0, 0, 0, 0.2);
-  //     }
-
-  //     .swiper-pagination-bullet-active {
-  //       color: #fff;
-  //       background: #007aff;
-  //     }
-  //     `],
-  //     pagination: {
-  //       clickable: true,
-  //       renderBullet: function (index, className) {
-  //         return '<span class="' + className + '">' + (index + 1) + "</span>";
-  //       },
-  //     },
-  //   }
-
-  //   Object.assign(swiperEl, params)
-
-  //   swiperEl.initialize();
-})
 </script>
 
 <style lang="scss" scoped>
@@ -179,6 +138,7 @@ onMounted(() => {
   &-row {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     margin-top: 13px;
   }
 
@@ -221,6 +181,7 @@ onMounted(() => {
       width: 674px;
       border-radius: 16px;
       overflow: auto;
+      background: white;
     }
 
     &-close {
@@ -230,6 +191,7 @@ onMounted(() => {
       width: 36px;
       height: 36px;
       cursor: pointer;
+      z-index: 999;
     }
 
     &-bg {

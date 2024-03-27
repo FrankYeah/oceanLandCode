@@ -1,16 +1,16 @@
 <template>
-  <div class="footer">
+  <div class="footer" id="footerID">
     <div class="footer-outer">
       <div class="footer-left">
         <nuxt-link class="footer-href" to="/">
-          <div class="footer-logo">與海有關</div>
+          <h2 class="footer-logo">與海有關</h2>
         </nuxt-link>
-          <div class="footer-copyright">© 2023 與海有關</div>
+          <h3 class="footer-copyright">© 2023 與海有關</h3>
       </div>
       <div class="footer-right">
         <div class="footer-box">
-          <div class="footer-title">Get in Touch</div>
-          <div class="footer-mail">hello@oceanland.tw</div>
+          <h2 class="footer-title">Get in Touch</h2>
+          <h2 class="footer-mail">hello@oceanland.tw</h2>
           <div class="footer-social">
             <a class="footer-href" href="https://www.instagram.com/sidd.blue/" target="_blank">
               <img class="footer-social-icon default-image" src="@/assets/img/footer/ig.png" alt="logo">
@@ -23,34 +23,34 @@
           </div>
         </div>
         <div class="footer-box">
-          <div class="footer-title">Browse</div>
-          <nuxt-link class="footer-href" to="/">
-            <div class="footer-text">店家</div>
+          <h2 class="footer-title">Browse</h2>
+          <nuxt-link class="footer-href" to="/store-list">
+            <h2 class="footer-text">店家</h2>
           </nuxt-link>
-          <nuxt-link class="footer-href" to="/">
-            <div class="footer-text">遊程</div>
+          <nuxt-link class="footer-href" to="/tour-list">
+            <h2 class="footer-text">遊程</h2>
           </nuxt-link>
-          <nuxt-link class="footer-href" to="/">
-            <div class="footer-text">關於</div>
+          <nuxt-link class="footer-href" to="/about">
+            <h2 class="footer-text">關於</h2>
           </nuxt-link>
-          <nuxt-link class="footer-href" to="/">
-            <div class="footer-text">加入 / 合作</div>
+          <nuxt-link class="footer-href" to="/contact">
+            <h2 class="footer-text">加入 / 合作</h2>
           </nuxt-link>
         </div>
         <div class="footer-box">
-          <div class="footer-title">More</div>
-          <nuxt-link class="footer-href" to="/">
+          <h2 class="footer-title">More</h2>
+          <nuxt-link class="footer-href" to="/collect">
             <div class="footer-row">
               <img class="footer-icon default-image" src="@/assets/img/footer/like.png" alt="logo">
               <img class="footer-icon hover-image" src="@/assets/img/navigation/like_h.png" alt="logo">
-              <div class="footer-icon-text">收藏</div>
+              <h2 class="footer-icon-text">收藏</h2>
             </div>
           </nuxt-link>
-          <nuxt-link class="footer-href" to="/">
+          <nuxt-link class="footer-href" to="/search">
             <div class="footer-row">
               <img class="footer-icon default-image" src="@/assets/img/footer/search.png" alt="logo">
               <img class="footer-icon hover-image" src="@/assets/img/navigation/search_h.png" alt="logo">
-              <div class="footer-icon-text">搜尋</div>
+              <h2 class="footer-icon-text">搜尋</h2>
             </div>
           </nuxt-link>
         </div>

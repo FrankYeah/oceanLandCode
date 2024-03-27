@@ -3,7 +3,7 @@
     <div class="search-text-box">
       <headName :en="'( SEARCH )'" :text="'搜尋'" />
       <div class="search-tag-box">
-        <div v-for="(tag, index) in tags" :key="`${index}${tag}`" class="search-tag">#{{ tag }}</div>
+        <h2 v-for="(tag, index) in tags" :key="`${index}${tag}`" class="search-tag">#{{ tag }}</h2>
       </div>
     </div>
     <div class="search-search-box">
@@ -12,35 +12,47 @@
         <img class="search-icon" src="@/assets/img/navigation/search_n.png" alt="logo">
       </div>
     </div>
-    <div class="search-text">"{{ searchText }}"，搜尋出 <span style="color: #7ca1b5;">7</span> 篇店家及 <span
-        style="color: #7ca1b5;">3</span> 篇遊程</div>
+    <h2 class="search-text">"{{ searchText }}"，搜尋出 <span style="color: #7ca1b5;">7</span> 篇店家及 <span
+        style="color: #7ca1b5;">3</span> 篇遊程</h2>
     <div class="search-banner">
-      <div v-for="(n) in innerWidth>1200? 120: 40" :key="n" class="search-dot"></div>
+      <div v-for="(n) in innerWidth > 1200 ? 120 : 40" :key="n" class="search-dot"></div>
     </div>
 
     <div class="search-store">
-      <div class="search-store-head">店家</div>
+      <h2 class="search-store-head">店家</h2>
       <img class="search-store-img" src="@/assets/img/other/deco_wave.png" alt="logo">
       <div class="search-store-box">
-        <store v-for="(store, index) in storeList" :key="`${index}${store.name}`" :store="store"
+        <store v-for="(store, index) in featuredStore" :key="`${index}${store.title}`" :store="store"
           class="search-store-item" />
       </div>
     </div>
 
     <div class="search-store">
-      <div class="search-store-head">遊程</div>
+      <h2 class="search-store-head">遊程</h2>
       <img class="search-store-img" src="@/assets/img/other/deco_wave.png" alt="logo">
       <div class="search-store-box">
-        <tour v-for="(tour, index) in tourList" :key="`${index}${tour.name}`" :tour="tour" class="search-store-item" />
+        <tour v-for="(tour, index) in featuredTour" :key="index" :tour="tour" class="search-store-item" />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { getStoreByType } from "~/api/index";
+
+const featuredStore = reactive<any>([])
+getStoreByType(1).then((res) => {
+  Object.assign(featuredStore, res.data.list.slice(0, 6))
+})
+
+const featuredTour = reactive<any>([])
+getStoreByType(1).then((res) => {
+  Object.assign(featuredTour, res.data.list.slice(0, 6))
+})
+
+
 const innerWidth = ref(0)
 onMounted(() => {
-  
   window.addEventListener('resize', () => {
     innerWidth.value = window.innerWidth
   });
@@ -57,111 +69,6 @@ const tags = reactive([
   '景點',
   '海邊景色',
   '書店',
-])
-
-const storeList = reactive([
-  {
-    name: '見書店',
-    url: '20230305',
-    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-    tag: ['綠葉環繞', '不限時'],
-    bg: ['https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg', 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/91472862/73a0aa62-5266-4dfb-aaff-e9751f79f667.jpg'],
-    location: '基隆市仁愛區仁二路 236 號',
-    tel: '02 2428 1159',
-    time: `平日：11:00–20:00<br>假日：11:00–22:00`
-  },
-  {
-    name: '見書店',
-    url: '20230305',
-    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-    tag: ['綠葉環繞', '不限時'],
-    bg: ['https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg', 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/91472862/73a0aa62-5266-4dfb-aaff-e9751f79f667.jpg'],
-    location: '基隆市仁愛區仁二路 236 號',
-    tel: '02 2428 1159',
-    time: `平日：11:00–20:00<br>假日：11:00–22:00`
-  },
-  {
-    name: '見書店',
-    url: '20230305',
-    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-    tag: ['綠葉環繞', '不限時'],
-    bg: ['https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg', 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/91472862/73a0aa62-5266-4dfb-aaff-e9751f79f667.jpg'],
-    location: '基隆市仁愛區仁二路 236 號',
-    tel: '02 2428 1159',
-    time: `平日：11:00–20:00<br>假日：11:00–22:00`
-  },
-  {
-    name: '見書店',
-    url: '20230305',
-    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-    tag: ['綠葉環繞', '不限時'],
-    bg: ['https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg', 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/91472862/73a0aa62-5266-4dfb-aaff-e9751f79f667.jpg'],
-    location: '基隆市仁愛區仁二路 236 號',
-    tel: '02 2428 1159',
-    time: `平日：11:00–20:00<br>假日：11:00–22:00`
-  },
-  {
-    name: '見書店',
-    url: '20230305',
-    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-    tag: ['綠葉環繞', '不限時'],
-    bg: ['https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg', 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/91472862/73a0aa62-5266-4dfb-aaff-e9751f79f667.jpg'],
-    location: '基隆市仁愛區仁二路 236 號',
-    tel: '02 2428 1159',
-    time: `平日：11:00–20:00<br>假日：11:00–22:00`
-  },
-])
-
-const tourList = reactive([
-  {
-    name: '見書店',
-    url: '20230305',
-    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
-    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
-  },
-  {
-    name: '見書店',
-    url: '20230305',
-    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
-    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
-  },
-  {
-    name: '見書店',
-    url: '20230305',
-    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
-    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
-  },
-  {
-    name: '見書店',
-    url: '20230305',
-    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
-    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
-  },
-  {
-    name: '見書店',
-    url: '20230305',
-    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
-    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
-  },
-  {
-    name: '見書店',
-    url: '20230305',
-    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
-    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
-  },
-  {
-    name: '見書店',
-    url: '20230305',
-    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-    bg: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg',
-    writer: 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/82310881/39f9250e-54c9-4614-9c65-3fdcebd61b13.jpg'
-  },
 ])
 
 </script>
@@ -282,8 +189,8 @@ const tourList = reactive([
     }
   }
 
- 
- 
+
+
 
   .search-search-box {
     width: 100%;

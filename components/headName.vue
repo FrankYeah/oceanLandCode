@@ -1,9 +1,9 @@
 <template>
   <div class="head-name">
-    <div class="head-name-en">{{ props.en }}</div>
+    <h2 class="head-name-en">{{ props.en }}</h2>
     <div class="head-name-title-box">
-      <span class="head-name-title">{{ props.text }}</span>
-      <div class="head-name-title2">{{ props.text2 }}</div>
+      <h3 class="head-name-title">{{ props.text }}</h3>
+      <h3 class="head-name-title2">{{ props.text2 }}</h3>
     </div>
     <img class="head-name-wave" src="@/assets/img/other/deco_wave.png" alt="logo">
   </div>

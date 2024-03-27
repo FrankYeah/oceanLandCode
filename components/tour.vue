@@ -1,20 +1,20 @@
 <template>
-  <nuxt-link :to="`/tour/${props.tour.url}`" >
+  <nuxt-link :to="`/tour/20230305`" >
     <div class="tour">
-      <div :style="`background-image: url('${props.tour.bg}')`"
+      <div :style="`background-image: url('${props.tour.coverImage}')`"
       class="tour-bg"
     >
-      <div class="tour-title">{{ props.tour.name }}</div>
-      <div :style="`background-image: url('${props.tour.writer}')`"
+      <h2 class="tour-title">{{ props.tour.title }}</h2>
+      <div :style="`background-image: url('${props.tour.coverImage}')`"
         class="tour-writer"
       ></div>
     </div>
-    <div class="tour-text">{{ props.tour.des }}</div>
+    <h2 class="tour-text">{{ props.tour.title }}</h2>
     <div class="tour-line"></div>
     <div class="tour-collect">
       <div class="tour-collect-box">
         <div class="tour-collect-person"></div>
-        <div class="tour-collect-text">+1,380 人已收藏</div>
+        <h3 class="tour-collect-text">+1,380 人已收藏</h3>
       </div>
       <img class="tour-collect-icon" src="@/assets/img/regular/like_n.png" alt="like_n">
     </div>
@@ -65,6 +65,7 @@ const props = defineProps(['tour'])
   
   &-text {
     padding: 20px 24px;
+    height: 80px;
     background-color: white;
     text-align: left;
   }

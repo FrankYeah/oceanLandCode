@@ -1,6 +1,6 @@
 <template>
   <div class="btn-type">
-    <div :class="['btn-type-btn',
+    <h2 :class="['btn-type-btn',
       {'btn-type-transparent': props.type == 'transparent'},
       {'btn-type-blue': props.type == 'blue'},
       {'btn-type-sblue': props.type == 'sblue'},
@@ -8,7 +8,7 @@
       {'btn-type-light': props.type == 'light'},
       {'btn-type-round': props.type == 'round'},
     ]"
-    >{{ props.text }}</div>
+    >{{ props.text }}</h2>
   </div>
 </template>
 

@@ -2,7 +2,9 @@
   <div class="box">
     <headName class="tour-head" :en="'( STORES )'" :text="'店家推薦'" />
     <div class="store-box">
-      <store v-for="(store, index) in props.list.storeList" :key="`${index}${store.name}`" :store="store" class="item" />
+      <store v-for="(store, index) in allStore" :key="`${index}${store.title}`" :coverImage="store.coverImage"
+        :tag="store.tag" :title="store.title" :des="store.des" url="20230305" :location="store.location"
+        :phone="store.phone" :businessHours="store.businessHours" class="item" />
     </div>
     <headName class="tour-head" :en="'( TOURS )'" :text="'遊程推薦'" />
     <div class="tour-box">
@@ -11,8 +13,14 @@
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
+import { getAllStore } from "~/api/index";
 
+const allStore  = reactive<any>([])
+
+getAllStore().then((res) => {
+  Object.assign(allStore,res.data.list.slice(1,10))
+})
 const props = defineProps(['list'])
 </script>
 

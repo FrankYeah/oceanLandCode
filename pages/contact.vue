@@ -7,13 +7,13 @@
         :text="'加入 / 合作'"
       />
       <div class="contact-box">
-        <div class="contact-head">收到您的訊息後，我們將盡快回覆您</div>
-        <div class="contact-text">以下欄位皆為必填</div>
+        <h2 class="contact-head">收到您的訊息後，我們將盡快回覆您</h2>
+        <h2 class="contact-text">以下欄位皆為必填</h2>
 
         <div class="contact-row">
           <div class="contact-title-box">
-            <div class="contact-icon">※</div>
-            <div class="contact-name">合作項目</div>
+            <h2 class="contact-icon">※</h2>
+            <h2 class="contact-name">合作項目</h2>
           </div>
 
           <el-select
@@ -33,8 +33,8 @@
 
         <div class="contact-row">
           <div class="contact-title-box">
-            <div class="contact-icon">※</div>
-            <div class="contact-name">您的稱呼</div>
+            <h2 class="contact-icon">※</h2>
+            <h2 class="contact-name">您的稱呼</h2>
           </div>
           <el-input
             class="contact-input"
@@ -46,8 +46,8 @@
 
         <div class="contact-row">
           <div class="contact-title-box">
-            <div class="contact-icon">※</div>
-            <div class="contact-name">聯繫方式</div>
+            <h2 class="contact-icon">※</h2>
+            <h2 class="contact-name">聯繫方式</h2>
           </div>
           <el-input
             class="contact-input"
@@ -59,8 +59,8 @@
 
         <div class="contact-row">
           <div class="contact-title-box">
-            <div class="contact-icon">※</div>
-            <div class="contact-name">來信說明</div>
+            <h2 class="contact-icon">※</h2>
+            <h2 class="contact-name">來信說明</h2>
           </div>
           <el-input
             class="contact-textarea"
@@ -73,7 +73,7 @@
         </div>
 
         <div class="contact-btn-box">
-          <div class="contact-btn">送出</div>
+          <h2 class="contact-btn">送出</h2>
         </div>
       </div>
     </div>
