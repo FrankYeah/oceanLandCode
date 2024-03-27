@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n'],
+    modules: ['@nuxtjs/tailwindcss','nuxt-swiper', '@pinia/nuxt', '@nuxtjs/i18n','nuxt-lazy-load'],
     typescript: {
         typeCheck: true
     },
@@ -14,6 +14,11 @@ export default defineNuxtConfig({
             additionalData: ''
           }
         }
+      }
+    },
+    vue:{
+      compilerOptions:{
+        isCustomElement : tag => tag.startsWith('swiper-')
       }
     },
     i18n: {

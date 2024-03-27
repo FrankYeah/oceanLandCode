@@ -2,8 +2,8 @@
   <div class="about">
     <div class="about-bg">
       <div class="about-bg-left">
-        <div class="about-bg-en">( VISION )</div>
-        <div class="about-bg-title">與海有關願景</div>
+        <h2 class="about-bg-en">( VISION )</h2>
+        <h2 class="about-bg-title">與海有關願景</h2>
         <img
           class="about-bg-wave"
           src="@/assets/img/other/deco_wave_w.png"
@@ -15,25 +15,25 @@
             src="@/assets/img/regular/keep_w.png"
             alt="sort-forward_n"
           />
-          <div>繼續閱讀</div>
+          <h3>繼續閱讀</h3>
         </div>
       </div>
       <div class="about-bg-right">
-        <div class="about-bg-text">我是「與海有關」發起人西打藍。</div>
-        <div class="about-bg-text">基隆，是我最愛的城市，</div>
-        <div class="about-bg-text">我在這裡出生、工作、創業，</div>
-        <div class="about-bg-text-more">
+        <h3 class="about-bg-text">我是「與海有關」發起人西打藍。</h3>
+        <h3 class="about-bg-text">基隆，是我最愛的城市，</h3>
+        <h3 class="about-bg-text">我在這裡出生、工作、創業，</h3>
+        <h3 class="about-bg-text-more">
           經常被基隆一個店家、景致、人給感動。
-        </div>
-        <div class="about-bg-text">於是想用自己文字、網站開發專業，</div>
-        <div class="about-bg-text">和幾位同樣喜歡基隆的朋友，</div>
-        <div class="about-bg-text">好好紀錄這座城市的故事。</div>
-        <div class="about-bg-name">西打藍</div>
+        </h3>
+        <h3 class="about-bg-text">於是想用自己文字、網站開發專業，</h3>
+        <h3 class="about-bg-text">和幾位同樣喜歡基隆的朋友，</h3>
+        <h3 class="about-bg-text">好好紀錄這座城市的故事。</h3>
+        <h3 class="about-bg-name">西打藍</h3>
       </div>
     </div>
     <div class="mobile mobile-about-bg">
-      <div class="vision">( VISION )</div>
-      <div class="title">與海有關願景</div>
+      <h2 class="vision">( VISION )</h2>
+      <h2 class="title">與海有關願景</h2>
       <div class="img-box">
         <img
           class="img"
@@ -41,25 +41,25 @@
           alt="deco_wave"
         />
       </div>
-      <div class="text">我是「與海有關」發起人西打藍。</div>
-      <div class="text">基隆，是我最愛的城市，</div>
-      <div class="text">我在這裡出生、工作、創業，</div>
-      <div class="text" style="margin-bottom: 24px">
+      <h3 class="text">我是「與海有關」發起人西打藍。</h3>
+      <h3 class="text">基隆，是我最愛的城市，</h3>
+      <h3 class="text">我在這裡出生、工作、創業，</h3>
+      <h3 class="text" style="margin-bottom: 24px">
         經常被基隆一個店家、景致、人給感動。
-      </div>
-      <div class="text">於是想用自己文字、網站開發專業，</div>
-      <div class="text">和幾位同樣喜歡基隆的朋友，</div>
-      <div class="text" style="margin-bottom: 24px">
+      </h3>
+      <h3 class="text">於是想用自己文字、網站開發專業，</h3>
+      <h3 class="text">和幾位同樣喜歡基隆的朋友，</h3>
+      <h3 class="text" style="margin-bottom: 24px">
         好好紀錄這座城市的故事。
-      </div>
-      <div class="text">西打藍</div>
+      </h3>
+      <h3 class="text">西打藍</h3>
       <div class="read">
         <img
           class="down"
           src="@/assets/img/regular/keep_w.png"
           alt="sort-forward_n"
         />
-        <div class="keepread">繼續閱讀</div>
+        <h3 class="keepread">繼續閱讀</h3>
       </div>
     </div>
     <div class="about-row">
@@ -69,12 +69,12 @@
           src="@/assets/img/other/deco_wave.png"
           alt="deco_wave"
         />
-        <div class="about-title">
+        <h3 class="about-title">
           介紹我最愛的城市 挖掘有意思的在地故事，故事背後都有人
-        </div>
-        <div class="about-text">
+        </h3>
+        <h3 class="about-text">
           為創造一個永續的創意發生機制，星濱山成立「永晝海濱美術館」，透過藝術、教育以及地方故事整合，沿著海港構築一座地域型的無牆美術館。2022年主題為「山頂的嘰嘰喳喳，斜斜的生活x斜斜的基隆」，共10組展覽內容、多場導覽，一起探尋基隆山海貌。
-        </div>
+        </h3>
       </div>
       <div class="about-square"></div>
     </div>
@@ -87,12 +87,12 @@
           src="@/assets/img/other/deco_wave.png"
           alt="deco_wave"
         />
-        <div class="about-title">
+        <h3 class="about-title">
           介紹我最愛的城市 挖掘有意思的在地故事，故事背後都有人
-        </div>
-        <div class="about-text">
+        </h3>
+        <h3 class="about-text">
           為創造一個永續的創意發生機制，星濱山成立「永晝海濱美術館」，透過藝術、教育以及地方故事整合，沿著海港構築一座地域型的無牆美術館。2022年主題為「山頂的嘰嘰喳喳，斜斜的生活x斜斜的基隆」，共10組展覽內容、多場導覽，一起探尋基隆山海貌。
-        </div>
+        </h3>
       </div>
     </div>
 
@@ -105,9 +105,9 @@
           :en="'( TEAM )'"
           :text="'團隊介紹'"
         />
-        <div class="about-group-text">
+        <h3 class="about-group-text">
           來自世界各地與在地創作者，共創基隆文化推廣。
-        </div>
+        </h3>
         <div class="about-group-en">Culture and People</div>
       </div>
       <div class="mobile mobile-about-group-row">
@@ -117,7 +117,7 @@
           :text="'團隊介紹'"
           :text2="'Culture and People'"
         />
-        <div class="content">來自世界各地與在地創作者，共創基隆文化推廣。</div>
+        <h3 class="content">來自世界各地與在地創作者，共創基隆文化推廣。</h3>
       </div>
       <div class="about-group-card-outer">
         <div
@@ -131,10 +131,10 @@
           ></div>
           <div class="about-group-card-row">
             <div>
-              <div class="about-group-card-pre">{{ member.pre }}</div>
+              <h3 class="about-group-card-pre">{{ member.pre }}</h3>
               <div class="about-group-card-name-box">
-                <div class="about-group-card-name">{{ member.name }}</div>
-                <div class="about-group-card-en">{{ member.en }}</div>
+                <h3 class="about-group-card-name">{{ member.name }}</h3>
+                <h3 class="about-group-card-en">{{ member.en }}</h3>
               </div>
               <div class="about-group-card-social">
                 <a
@@ -203,10 +203,10 @@
           :key="`${index}${thank.name}`"
           class="about-thank-box"
         >
-          <div class="about-thank-title">{{ thank.name }}</div>
+          <h2 class="about-thank-title">{{ thank.name }}</h2>
           <div class="about-thank-row">
             <div class="about-thank-img"></div>
-            <div class="about-thank-text">{{ thank.text }}</div>
+            <h3 class="about-thank-text">{{ thank.text }}</h3>
           </div>
           <div class="about-thank-row-line"></div>
         </div>
@@ -290,7 +290,6 @@ const memberList = reactive([
 currentMember.value = memberList[0];
 
 function popupMember(index: any) {
-  console.log(index);
   isPopup.value = true;
   currentMember.value = memberList[index];
 }

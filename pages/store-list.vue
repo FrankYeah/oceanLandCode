@@ -3,59 +3,71 @@
     <div class="store-list">
       <headName class="store-list-head" :en="'( STORES )'" :text="'所有店家'" />
       <div class="store-list-area-row">
-        <div class="store-list-area-box"
-          v-for="(area, index) in areaList"
-          :key="`${index}${area.name}`"
-        >
-          <div v-if="area.url" :style="`background-image: url('${area.url}')`"
-            class="store-list-area-inner"
-          >
+        <div class="store-list-area-box" v-for="(area, index) in areaList" :key="`${index}${area.name}`">
+          <div v-if="area.url" :style="`background-image: url('${area.url}')`" class="store-list-area-inner">
             <div class="store-list-area-bg"></div>
-            <div class="store-list-area-name">{{ area.name }}</div>
+            <h2 class="store-list-area-name">{{ area.name }}</h2>
           </div>
-          <div v-else :style="`background-color: black`"
-            class="store-list-area-inner"
-          >{{ area.name }}</div>
+          <h2 v-else :style="`background-color: black`" class="store-list-area-inner">{{ area.name }}</h2>
         </div>
       </div>
-      <div class="store-list-area-mineRow">      
-        <el-select v-model="value" class="store-list-area-mineRow" placeholder="所有地區" size="large">
-          <el-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          />
-        </el-select>
+      <div class="store-list-area-mineRow">
+        <client-only>
+          <el-select v-model="value" class="store-list-area-mineRow" placeholder="所有地區" size="large">
+            <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
+          </el-select>
+        </client-only>
       </div>
 
       <div class="store-list-type">
-        <btnType v-for="(type, index) in typeList"
-          :key="`${index}${type.name}`"
-          class="store-list-type-btn"
-          :text="`${type.name}`"
-          :type="'round'"
-        />
+        <btnType v-for="(type, index) in typeList" :key="`${index}${type.name}`" class="store-list-type-btn"
+          :text="`${type.name}`" :type="'round'" />
       </div>
 
       <div class="store-list-filter">
-        <div class="store-list-filter-sum">共 <span style="color: #7ca1b5;">16</span> 間店家</div>
-        <div class="store-list-filter-time">時間排序</div>
+        <h2 class="store-list-filter-sum">共 <span style="color: #7ca1b5;">{{ storeQuantity }}</span> 間店家</h2>
+        <h2 class="store-list-filter-time">時間排序</h2>
         <img class="store-list-filter-img" src="@/assets/img/regular/sort-forward_n.png" alt="sort-forward_n">
       </div>
 
       <div class="store-list-box">
-        <store v-for="(store, index) in storeList"
-          :key="`${index}${store.name}`"
-          :store="store"
-          class="store-list-item"
-        />
+        <store v-for="(store, index) in currentStore" :key="`${index}${store.title}`" :store="store"
+          class="store-list-item" />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { getAllStore } from "~/api/index";
+
+const allStore = reactive<any>([])
+const currentStore = reactive<any>([])
+const storeQuantity = ref(0)
+let storeLength = 9
+
+getAllStore().then((res) => {
+  Object.assign(allStore, res.data.list)
+  Object.assign(currentStore, allStore.slice(0, storeLength))
+  storeQuantity.value = allStore.length
+})
+
+onMounted(() => {
+  if (process.client) {
+    window.addEventListener('scroll', handleScroll);
+  }
+});
+
+const handleScroll = (e: any) => {
+  let footerElement: any = document.getElementById("footerID");
+  let footerHeight = footerElement.offsetHeight;
+  let isBottom =
+    Math.ceil(window.scrollY) + window.innerHeight >= (document.documentElement.offsetHeight) - footerHeight;
+  if (isBottom) {
+    storeLength += 9
+    Object.assign(currentStore, allStore.slice(0, storeLength))
+  }
+}
 
 const areaList = reactive([
   { name: '所有地區', url: '' },
@@ -66,14 +78,14 @@ const areaList = reactive([
 
 const typeList = reactive([
   { name: '所有分類' },
-  { name: '咖啡廳'},
+  { name: '咖啡廳' },
   { name: '麵包店' },
   { name: '甜點店' },
-  { name: '咖啡廳'},
+  { name: '咖啡廳' },
   { name: '麵包店' },
-  { name: '咖啡廳'},
+  { name: '咖啡廳' },
   { name: '麵包店' },
-  { name: '咖啡廳'},
+  { name: '咖啡廳' },
   { name: '麵包店' },
 ])
 
@@ -102,59 +114,6 @@ const options = [
   },
 ]
 
-const storeList = reactive([
-  { 
-    name: '見書店',
-    url: '20230305',
-    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-    tag: ['綠葉環繞', '不限時'],
-    bg: ['https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg', 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/91472862/73a0aa62-5266-4dfb-aaff-e9751f79f667.jpg'],
-    location: '基隆市仁愛區仁二路 236 號',
-    tel: '02 2428 1159',
-    time: `平日：11:00–20:00<br>假日：11:00–22:00`
-  },
-  { 
-    name: '見書店',
-    url: '20230305',
-    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-    tag: ['綠葉環繞', '不限時'],
-    bg: ['https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg', 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/91472862/73a0aa62-5266-4dfb-aaff-e9751f79f667.jpg'],
-    location: '基隆市仁愛區仁二路 236 號',
-    tel: '02 2428 1159',
-    time: `平日：11:00–20:00<br>假日：11:00–22:00`
-  },
-  { 
-    name: '見書店',
-    url: '20230305',
-    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-    tag: ['綠葉環繞', '不限時'],
-    bg: ['https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg', 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/91472862/73a0aa62-5266-4dfb-aaff-e9751f79f667.jpg'],
-    location: '基隆市仁愛區仁二路 236 號',
-    tel: '02 2428 1159',
-    time: `平日：11:00–20:00<br>假日：11:00–22:00`
-  },
-  { 
-    name: '見書店',
-    url: '20230305',
-    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-    tag: ['綠葉環繞', '不限時'],
-    bg: ['https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg', 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/91472862/73a0aa62-5266-4dfb-aaff-e9751f79f667.jpg'],
-    location: '基隆市仁愛區仁二路 236 號',
-    tel: '02 2428 1159',
-    time: `平日：11:00–20:00<br>假日：11:00–22:00`
-  },
-  { 
-    name: '見書店',
-    url: '20230305',
-    des: '基隆的文化綠洲──以綠植、乾燥花及木家具陳設的書店空間，令人備感愜意自在。',
-    tag: ['綠葉環繞', '不限時'],
-    bg: ['https://tour.klcg.gov.tw/media/klcgtour/restaurants/46978637/4d0a92f6-f101-4057-92bc-c3b2269d589a.jpg', 'https://tour.klcg.gov.tw/media/klcgtour/restaurants/91472862/73a0aa62-5266-4dfb-aaff-e9751f79f667.jpg'],
-    location: '基隆市仁愛區仁二路 236 號',
-    tel: '02 2428 1159',
-    time: `平日：11:00–20:00<br>假日：11:00–22:00`
-  },
-])
-
 </script>
 
 <style lang="scss" scoped>
@@ -163,15 +122,14 @@ const storeList = reactive([
   background-color: #f6f9fc;
 
 }
+
 .store-list {
   padding: 120px 0px 164px;
   max-width: 1200px;
   margin: auto;
   text-align: center;
-  
-  &-head {
-    
-  }
+
+  &-head {}
 
   &-area-row {
     display: flex;
@@ -235,9 +193,7 @@ const storeList = reactive([
     justify-content: flex-end;
     margin: 60px 8px 0px;
 
-    &-sum {
-
-    }
+    &-sum {}
 
     &-time {
       margin-left: 24px;
@@ -269,22 +225,26 @@ const storeList = reactive([
 
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) {
   .store-list {
     width: 80vw;
+
     &-head {
       align-items: center;
     }
+
     &-area {
       &-row {
         display: none;
       }
+
       &-mineRow {
         display: block;
         width: 100%;
         padding: 10px 5px;
         position: relative;
       }
+
       &-select {
         width: 100%;
         height: 42px;
@@ -294,17 +254,19 @@ const storeList = reactive([
 
 
     }
+
     &-type {
       display: flex;
       flex-wrap: wrap;
+
       &-btn {
         margin: 0px 5px 10px 0px;
       }
     }
+
     &-box {
       justify-content: center;
     }
   }
 }
-
 </style>
